@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="font_family/font/stylesheet.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style>
+            .pic {
+                width: 100%;
+                position: relative;
+            }
+            body {
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            .blur {
+                position: absolute;
+                top: 0px;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.1);
+                backdrop-filter: blur(1.5px);
+            }
+            img {
+                width: 100%;
+            }
+            .text {
+                position: absolute;
+                z-index: 3;
+                top: 20px;
+                width: 100%;
+            }
+            p, em, strong{
+                font-family: "SF Pro Display";
+            }
+            .text p {
+                font-size: 20px;
+                text-align: center;
+                font-weight: 900;
+                color: white;
+            }
+            strong {
+                color: #009EFF;
+            }
+            strong {
+                font-weight: 800;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="pic">
+            <div class="text">
+            </div>
+            <img src="p.JPG" alt="">
+            <div class="blur"></div>
+        </div>
+    </body>
+</html>

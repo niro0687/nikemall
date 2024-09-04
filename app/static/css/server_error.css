@@ -1,0 +1,26 @@
+h4 {
+    text-align: center;
+    color: #FF3050;
+}
+
+i {
+    font-size: 80px;
+    text-align: center;
+}
+
+p {
+    font-weight: 800;
+    font-size: 12px;
+    text-align: center;
+    margin: 20px 30px 20px 30px;
+    color: #1A1A1A;
+}
+
+strong {
+    color: #0091FF;
+}
+
+div {
+    width: 50%;
+    margin: 50px auto 50px auto;
+}

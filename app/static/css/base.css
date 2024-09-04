@@ -1,0 +1,29 @@
+
+.abs {
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+}
+.j-center {
+    justify-content: center;
+}
+.a-center {
+    align-items: center;
+}
+input, a, button, select {
+    background: none;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+p, h1, h2, h3, h4, h5, h6, input, strong, em, span, a, li, ul, button, select, option {
+    font-family: "MDGroteskRegular";
+    color: white;
+}
+
+.j-space {
+    justify-content: space-evenly;
+}
+

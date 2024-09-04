@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Nike-Mall Administration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        <link rel="stylesheet" href="{% static 'font/css/all.css' %}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{% static 'fontFamily/font.css' %} ">
+        <link rel="icon" href="{% static 'icon/favicon.png' %}" type="image/png" />
+        <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    </head>
+    <body>
+        <div class="header flex j-space a-center">
+            <div class="icon btn-option flex j-center a-center">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="text">
+                <p>Administration</p>
+            </div>
+            <div class="icon flex j-center a-center">
+                <i class="fa fa-globe"></i>
+            </div>
+        </div>
+        <div class="field-change-user-pass hide">
+            <p class="style"></p>
+            <p class="flag">Change user's password</p>
+            <p class="email"></p>
+             <form action="" class="user-pass-form">
+                    <div class="field new-pass flex a-center j-space">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Create new password">
+                        <div class="icon btn-show-create-password icon-show flex a-center j-center">
+                            <i class="fa fa-eye-slash" id="cr-pass"></i>
+                        </div>
+                    </div>
+                    <p class="error error-create-pass">Password different</p>
+                    <div class="field confirm-pass flex a-center j-space">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Confirm new password">
+                        <div class="icon btn-show-create-password icon-show flex a-center j-center">
+                            <i class="fa fa-eye-slash" id="cn-pass"></i>
+                        </div>
+                    </div>
+                    <p class="error error-confirm-pass">Password different</p>
+                    <p class="remind">Once you click on the button "change password", note that Nike-Mall disconnect this account and update its session. So Nike-Mall never wonder you to disconnect this account after changing password but it does it automatically. Thank you.</p>
+                    <div class="btn-valid-change flex j-center a-center">
+                        <button>Change password</button>
+                        <svg>
+                            <circle r="5" cx="5" cy="5"></circle>
+                        </svg>
+                    </div>
+                    <div class="btn-cancel-change flex j-center a-center">
+                        <p>Cancel</p>
+                    </div>
+            </form>
+        </div>
+        <div class="blur-pass"></div>
+        <div class="change-user-pass hide">
+            <div class="main">
+                <div class="search flex j-space a-center">
+                    <div class="icon flex j-center a-center">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    {% csrf_token %}
+                    <input type="email" placeholder="Search user's email">
+                    <div class="icon icon-cancel-user-pass flex j-center a-center">
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="display-result">
+                    <p class="inst">Search user's email and change its password if you want.</p>
+                </div>
+                <div class="load-search flex j-center a-center">
+                     <div class="flex j-center a-center">
+                        <svg>
+                            <circle r="10" cx="10" cy="10"></circle>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="change-my-pass hide">
+            <div class="main">
+                <div class="cancel-change-pass n-btn flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h3>Change my password</h3>
+                <p class="conseil">Once you click on the button "change password", note that Nike-Mall disconnect this account and update its session. So Nike-Mall never wonder you to disconnect this account after changing password but it does it automatically. Thank you.</p>
+                
+                <form action="{% url 'app:change_admin_password' %}" method="POST" class="official-password-change">
+                    <input type="hidden" value="" name="old_password">
+                    <input type="hidden" value="" name="new_password">
+                    <input type="hidden" value="" name="confirm_password">
+                    <button type="submit">Submit</button>
+                </form>
+                
+                <form action="" class="my-pass-form">
+                    <div class="field old-pass flex a-center j-space">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Old password">
+                        <div class="icon btn-show-old-password icon-show flex a-center j-center">
+                            <i class="fa fa-eye-slash" id="old-pass"></i>
+                        </div>
+                    </div>
+                    <p class="error error-old-pass">Wrong password</p>
+                    <div class="field new-pass flex a-center j-space">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Create new password">
+                        <div class="icon btn-show-create-password icon-show flex a-center j-center">
+                            <i class="fa fa-eye-slash" id="cr-pass"></i>
+                        </div>
+                    </div>
+                    <p class="error error-create-pass">Password different</p>
+                    <div class="field confirm-pass flex a-center j-space">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Confirm new password">
+                        <div class="icon btn-show-create-password icon-show flex a-center j-center">
+                            <i class="fa fa-eye-slash" id="cn-pass"></i>
+                        </div>
+                    </div>
+                    <p class="error error-confirm-pass">Password different</p>
+                    <div class="btn-valid-change flex j-center a-center">
+                        <button>Change password</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="option flex j-center a-center">
+            <div class="box">
+                <p class="style"></p>
+                <div class="cancel flex j-center a-center">
+                    <i class="fa fa-times"></i>
+                </div>
+                <h3>Options</h3>
+                <div class="btn-op btn-change-user-pass n-btn flex j-space a-center">
+                    <div class="icon flex j-center a-center">
+                        <i class="far fa-user"></i>
+                    </div>
+                    <div class="text">
+                        <p>Change user's password</p>
+                    </div>
+                </div>
+                <div class="btn-op btn-change-my-pass n-btn flex j-space a-center">
+                    <div class="icon flex j-center a-center">
+                        <i class="fa fa-key"></i>
+                    </div>
+                    <div class="text">
+                        <p>Change my password</p>
+                    </div>
+                </div>
+                <div class="btn-op n-btn btn-logout flex j-space a-center">
+                    <div class="icon flex j-center a-center">
+                        <i class="fa fa-power-off"></i>
+                    </div>
+                    <div class="text">
+                        <p>Logout</p>
+                    </div>
+                    <a href="{% url 'app:logout_view' %}" class="hide-btn valid-logout"></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="upload-apk">
+            <h3>Updated NikeMall application</h3>
+            <form action="">
+                <div class="field apk-name flex a-center j-space">
+                    <div class="icon flex j-center a-center">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="text">
+                        <input type="text" required placeholder="APK name">
+                    </div>
+                </div>
+                
+                <div class="field version flex a-center j-space">
+                    <div class="icon flex j-center a-center">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="text">
+                        <input type="tel" required placeholder="Version">
+                    </div>
+                </div>
+                
+                <div class="field file flex a-center j-space">
+                    <div class="icon flex a-center j-center">
+                        <i class="far fa-file-code"></i>
+                    </div>
+                    <div class="text">
+                        <p>Choose APK file</p>
+                        <p>No file choosen</p>
+                    </div>
+                    <input type="file" id="file" required>
+                </div>
+                
+                <div class="btn-submit-upload flex j-center a-center">
+                    <button type="submit">Upload new version</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="second-box withdraw-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-with flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Request for withdrawal</h2>
+                
+            </div>
+        </div>
+        
+         <div class="second-box vip-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>All VIP requests</h2>
+               
+            </div>
+        </div>
+        <div class="loading flex a-center j-center">
+            <div class="flex j-center a-center">
+                <svg>
+                    <circle r="10" cx="10" cy="10"></circle>
+                </svg>
+            </div>
+        </div>
+        <div class="box-alert hide flex j-center a-center">
+            <div class="main-alert">
+                <p></p>
+            </div>
+        </div>
+        <div class="second-box all-users-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-users flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users</h2>
+                
+            </div>
+        </div>
+        
+        <div class="second-box vip0-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip0 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP0</h2>
+                
+            </div>
+        </div>
+        
+        <div class="second-box vip1-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip1 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP1</h2>
+               
+            </div>
+        </div>
+        
+        <div class="second-box vip2-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip2 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP2</h2>
+                
+            </div>
+        </div>
+        
+        <div class="second-box vip3-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip3 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP3</h2>
+                
+            </div>
+        </div>
+        
+        <div class="second-box vip4-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip4 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP4</h2>
+                
+            </div>
+        </div>
+        
+        <div class="second-box vip5-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip5 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP5</h2>
+             
+            </div>
+        </div>
+        
+        <div class="second-box vip6-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip6 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP6</h2>
+               
+            </div>
+        </div>
+        
+        <div class="second-box vip7-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip7 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP7</h2>
+                
+            </div>
+        </div>
+        
+        <div class="second-box vip8-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip8 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP8</h2>
+                
+            </div>
+        </div>
+        
+        <div class="second-box vip9-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip9 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP9</h2>
+                
+               
+            </div>
+        </div>
+        
+        <div class="second-box vip10-box hide">
+            <div class="main">
+                <div class="cancel-box cancel-vip10 flex j-center a-center">
+                    <i class="fa fa-chevron-right"></i>
+                </div>
+                <h2>Preview all users has VIP10</h2>
+               
+            </div>
+        </div>
+        
+        <div class="black-page"></div>
+        <h3 class="hi">Hello {{ request.user.last_name }} {{ request.user.first_name }}</h3>
+        <h1 class="wel">Welcome to Nike-Mall<br>Administration</h1>
+        <p class="you-can">You can see the all data bellow and control them.</p>
+        
+        <div class="allow flex j-center a-center">
+            <div class="icon flex j-center a-center">
+                <i class="fa fa-globe"></i>
+            </div>
+            <div class="text">
+                <p>Web access by default user</p>
+                {% if admin.web_access %}
+                <p class="on">On</p>
+                {% else %}
+                <p class="off">Off</p>
+                {% endif %}
+            </div>
+            <div class="icon-on flex j-center a-center {% if admin.web_access %}on{% else %}off{% endif %}">
+                {% if admin.web_access %}
+                <i class="fa fa-toggle-on"></i>
+                {% else %}
+                <i class="fa fa-toggle-off"></i>
+                {% endif %}
+            </div>
+        </div>
+        
+        <h3 class="solde">Balance</h3>
+        <p class="solde-value">${{ admin.balance }}</p>
+        <div class="win flex">
+            <div class="one">
+                <p>Total earning</p>
+                <p>${{ admin.win }}</p>
+            </div>
+            <div class="detail">
+                <p>Details:</p>
+                <p>{{ admin.recharge_count.count }} user(s) recharged them account.<br>Your total amount what you win is right there.</p>
+                <p>{{ admin.recharge_transaction }} transactions</p>
+            </div>
+        </div>
+        <div class="lost flex">
+            <div class="detail">
+                <p>Details:</p>
+                <p>{{ admin.withdraw_count.count }} user(s) had been withdraw to their own wallet.<br>The total amount is right there.</p>
+                <p>{{ admin.withdraw_transaction }} transaction(s)</p>
+            </div>
+            <div class="one">
+                <p>Total lost</p>
+                <p>${{ admin.lost }}</p>
+            </div>
+        </div>
+        
+        <div class="little-box n-btn flex j-center a-center users">
+            <div class="icon">
+                <i class="far fa-user"></i>
+            </div>
+            <div class="percent">
+                <p>100%</p>
+            </div>
+            
+            <p class="val">{{ all_users }}</p>
+            <div class="text">
+                <p>All users</p>
+            </div>
+        </div>
+        
+        <div class="little-box n-btn flex j-center a-center withdraw">
+            <div class="icon">
+                <i class="fa fa-wallet"></i>
+            </div>
+            <div class="total-amount">
+                <p>${{ sum_w }}</p>
+            </div>
+            <p class="val">{{ withdraw_req }}</p>
+            <div class="text">
+                <p>Request for withdrawal</p>
+            </div>
+        </div>
+        
+        <div class="little-box n-btn flex j-center a-center vip">
+            <div class="icon">
+                <i class="far fa-money-bill-alt"></i>
+            </div>
+            <div class="total-amount">
+                <p>${{ sum_r }}</p>
+            </div>
+            <p class="val">{{ vip_req }}</p>
+            <div class="text">
+                <p>VIP Request</p>
+            </div>
+        </div>
+        
+        <div class="little-box n-btn flex j-center a-center vip0">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip0_percent }}%</p>
+            </div>
+            <p class="val">{{ count_vip0 }}</p>
+            <div class="text">
+                <p>VIP0</p>
+            </div>
+        </div>
+        
+        <div class="little-box n-btn flex j-center a-center vip1">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip1_percent }}%</p>
+            </div>
+            <p class="val">{{ count_vip1 }}</p>
+            <div class="text">
+                <p>VIP1</p>
+            </div>
+        </div>
+        
+        <div class="little-box n-btn flex j-center a-center vip2">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip2_percent }}%</p>
+            </div>
+            <p class="val">{{ count_vip2 }}</p>
+            <div class="text">
+                <p>VIP2</p>
+            </div>
+        </div>
+        
+        <div class="little-box n-btn flex j-center a-center vip3">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip3_percent }}%</p>
+            </div>
+            <p class="val">{{count_vip3 }}</p>
+            <div class="text">
+                <p>VIP3</p>
+            </div>
+        </div>
+        
+        <div class="little-box flex n-btn j-center a-center vip4">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip4_percent }}%</p>
+            </div>
+            <p class="val">{{ count_vip4 }}</p>
+            <div class="text">
+                <p>VIP4</p>
+            </div>
+        </div>
+        
+        <div class="little-box flex n-btn j-center a-center vip5">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip5_percent }}%</p>
+            </div>
+            <p class="val">{{ count_vip5 }}</p>
+            <div class="text">
+                <p>VIP5</p>
+            </div>
+        </div>
+        
+        <div class="little-box flex n-btn j-center a-center vip6">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip6_percent }}%</p>
+            </div>
+            <p class="val">{{ count_vip6 }}</p>
+            <div class="text">
+                <p>VIP6</p>
+            </div>
+        </div>
+        
+        <div class="little-box flex n-btn j-center a-center vip7">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip7_percent }}%</p>
+            </div>
+            <p class="val">{{ count_vip7 }}</p>
+            <div class="text">
+                <p>VIP7</p>
+            </div>
+        </div>
+        
+        <div class="little-box flex n-btn j-center a-center vip8">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip8_percent }}%</p>
+            </div>
+            <p class="val">{{ count_vip8 }}</p>
+            <div class="text">
+                <p>VIP8</p>
+            </div>
+        </div>
+        
+        <div class="little-box flex n-btn j-center a-center vip9">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip9_percent}}%</p>
+            </div>
+            <p class="val">{{ count_vip9 }}</p>
+            <div class="text">
+                <p>VIP9</p>
+            </div>
+        </div>
+        <div class="little-box flex j-center a-center n-btn vip10">
+            <div class="icon">
+                <i class="far fa-gem"></i>
+            </div>
+            <div class="percent">
+                <p>{{ vip10_percent}}%</p>
+            </div>
+            <p class="val">{{ count_vip10 }}</p>
+            <div class="text">
+                <p>VIP10</p>
+            </div>
+        </div>
+        <div class="little-box n-btn flex j-center a-center payed">
+            <div class="icon">
+                <i class="fa fa-check-double"></i>
+            </div>
+            <div class="percent">
+                <p>{{ withdraw_req_percent }}%</p>
+            </div>
+            <p class="val">{{ withdraw_payed }}</p>
+            <div class="text">
+                <p>Payed</p>
+            </div>
+        </div>
+        
+        <p class="apk-text">Our all applications</p>
+        
+        {% for apk in apks %}
+        <div class="each-apk-uploaded flex j-space a-center">
+            <div class="icon flex j-center a-center">
+                <i class="fab fa-android"></i>
+            </div>
+            <div class="don">
+                <p>{{ apk.name }}</p>
+                <p>v{{ apk.version }}</p>
+                <p>{{ apk.datetime }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="btn-upload-new-version flex j-center a-center">
+            <p>Upload new APK versionn</p>
+        </div>
+        
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static 'js/admin.js' %}" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>
+

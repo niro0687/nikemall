@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>NikaMall | Login or Register</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{% static 'fontFamily/font.css' %}">
+        <link rel="stylesheet" href="{% static 'font/css/all.css' %}">
+        <link rel="icon" href="{% static 'icon/favicon.png' %}" type="image/png" />
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/login.css' %}">
+        
+    </head>
+    <body>
+        <div class="choose-lang flex j-center a-center">
+            <div class="bl">
+                <div class="close-lang flex n-btn j-center a-center">
+                    <i class="fa fa-times"></i>
+                </div>
+                <p class="tt">Choose language</p>
+                <div class="each-lang en flex j-space a-center n-btn" lang="en">
+                    <div class="text">
+                        <p>English</p>
+                        <p>Available</p>
+                    </div>
+                    <div class="rond flex j-center a-center">
+                        <span class="active"></span>
+                    </div>
+                </div>
+                <div class="each-lang fr flex j-space a-center n-btn" lang="fr">
+                    <div class="text">
+                        <p>French</p>
+                        <p>Available</p>
+                    </div>
+                    <div class="rond flex j-center a-center">
+                        <span class="disabled"></span>
+                    </div>
+                </div>
+                <div class="valid-change flex j-center a-center n-btn">
+                    <button>Change</button>
+                </div>
+            </div>
+        </div>
+        <div class="main-street">
+        <div class="block1 flex j-center a-center">
+            <div class="little-logo abs">
+                <i class="fa fa-gem"></i>
+            </div>
+            <div class="n-btn lang abs">
+                <p><span><i class="fa fa-globe"></i></span> Language</p>
+            </div>
+            
+            <div class="footer flex j-space a-center">
+                <div class="logo-social telegram flex a-center j-center n-btn">
+                    <i class="fab fa-telegram"></i>
+                </div>
+            </div>
+            
+            <div class="logo flex a-center j-center">
+                <img src="{% static 'img/vip.jpg' %}" alt="">
+            </div>
+            <h1>Nike-Mall</h1>
+        </div>
+        
+        <div class="success-alert flex j-center a-center">
+            <div class="main-success">
+                <div class="head flex j-center a-center">
+                    <p>New account</p>
+                </div>
+                <div class="texts">
+                    <p>Hello <strong></strong></p>
+                    <p>Welcome to Nikemall</p>
+                    <p>Your account has just successfully created. By clicking on the button "Ok" bellow, you can login your account just typing your password and you can earn money after, do the task available and get withdraw. Thank you so much for trusting.</p>
+                    <p>Good job</p>
+                </div>
+                <div class="ok flex j-center a-center">
+                    <p>Ok</p>
+                </div>
+            </div>
+        </div>
+        
+        <a class="to-telegram" target="_blank" href="http://t.me/niro0687" style="width: 0px; height: 0px;"></a>
+        
+        
+        <a class="to-facebook" href="https://www.facebook.com/profile.php?id=100088502632351" target="_blank" style="width: 0px; height: 0px;" ></a>
+        
+        <a class="to-email" href="mailto:tohannessbi@gmail.com" target="_blank" style="width: 0px; height: 0px;" ></a>
+        
+        <a class="to-whatsapp" href="https://wa.me/261329990558" target="_blank" style="width: 0px; height: 0px;" ></a>
+        
+        <a class="to-phone" href="tel:+261346165696" target="_blank" style="width: 0px; height: 0px;" ></a>
+        
+        <a class="to-instagram" href="https://www.instagram.com/niro_0687/" target="_blank" style="width: 0px; height: 0px;" ></a>
+        
+        
+        <div class="fields">
+            <div class="login">
+                <h2>Log in</h2>
+                <form  method="post" action="."  class="login-form">
+                    {% csrf_token %}
+                    <div class="email flex a-center">
+                        <div class="icon flex a-center j-center">
+                            <i class="far fa-user"></i>
+                        </div>
+                        {% if error_email or error_password %}
+                        <input type="email" name="email" id="email" placeholder="Your email" value="{{ email }}" required>
+                        {% else %}
+                        <input type="email" name="email" id="email" placeholder="Your email" required>
+                        {% endif %}
+                    </div>
+                    {% if error_email %}
+                    <p class="error error-user" error="true">User does not found</p>
+                    {% else %}
+                    <p class="error error-user" error="false">User does not found</p>
+                    {% endif %}
+                    <div class="password flex a-center">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" name="password" id="pass" placeholder="Password" required  minlength="8" maxlength="16">
+                        <div class="show-password btn-show-login-pass n-btn">
+                            <i class="fa fa-eye-slash"></i>
+                        </div>
+                    </div>
+                    {% if error_password %}
+                    <p class="error error-password" error="true">Wrong password</p>
+                    {% else %}
+                    <p class="error error-password" error="false">Wrong password</p>
+                    {% endif %}
+                    <div class="btn-login flex a-center j-center n-btn">
+                        <button type="submit" id="btn">Connexion</button>
+                    </div>
+                    <span class="sep"></span>
+                    <p class="no-account n-btn">I don't have an account - Register</p>
+                </form>
+            </div>
+
+           
+            
+            <div class="register">
+                <h2>Sign up</h2>
+                <form action="" class="register-form" id="formulaire">
+                    {% csrf_token %}
+                    <div class="email flex a-center">
+                        <div class="icon flex a-center j-center">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <input type="email" name="email" id="email" placeholder="Your email" required>
+                    </div>
+                    <p class="error error-create-email">Email not valid</p>
+                    <div class="create-password flex a-center">
+                        <div class="icon flex a-center j-space">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" id="pass" placeholder="Create password" required  minlength="8" maxlength="16">
+                        <div class="show-password btn-show-create-password n-btn">
+                            <i class="fa fa-eye-slash" id="cr-pass"></i>
+                        </div>
+                    </div>
+                    <p class="error error-create-pass">Password does not match</p>
+                    <div class="confirm-password flex a-center">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" placeholder="Confirm password" required minlength="8" maxlength="16">
+                        <div class="show-password btn-show-create-password n-btn">
+                            <i class="fa fa-eye-slash" id="cn-pass"></i>
+                        </div>
+                    </div>
+                    <p class="error error-confirm-pass">Password does not match</p>
+                    <div class="transaction-password flex a-center">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-lock"></i>
+                        </div>
+                        <input type="password" id="transaction-password" minlength="6" maxlength="16" placeholder="Transaction Password" required>
+                        <div class="show-password btn-show-transaction-password n-btn">
+                            <i class="fa fa-eye-slash"></i>
+                        </div>
+                    </div>
+                    <p class="error error-transaction"></p>
+                    <div class="invitation-code flex a-center">
+                        <div class="icon flex a-center j-center">
+                            <i class="fa fa-user"></i>
+                        </div>
+                        {% if ref %}
+                        <input type="tel" name="invitationcode" id="invitation-code" placeholder="Invitation code" required value="{{ key }}" minlength="6" maxlength="6"
+                        >
+                        {% else %}
+                        <input type="tel" name="invitationcode" id="invitation-code" placeholder="Invitation code" required minlength="6" maxlength="6"
+                        >
+                        {% endif %}
+                    </div>
+                    <p class="error error-code">Invitation code does not exists</p>
+                    <div class="telegram flex a-center">
+                        <div class="icon flex a-center j-center">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <input type="text" name="telegram" placeholder="example123" maxlength="25" minlength="4">
+                    </div>
+                    <p class="error error-telegram">Telegram link does not valid or incorrect</p>
+                    <div class="whatsapp flex a-center">
+                        <div class="icon flex a-center j-center">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="ex: 261-1234567890" minlength="10" maxlength="15">
+                    </div>
+                    <p class="error error-whatsapp">Whatsapp link does not valid or incorrect</p>
+                    <div class="btn-register flex a-center j-center n-btn">
+                        <button type="submit" name="enregistrer">Register</button>
+                        <svg>
+                            <circle r="5" cx="5" cy="5"></circle>
+                        </svg>
+                    </div>
+                    <span class="sep"></span>
+                    <p class="have-account n-btn">I have already an account - Log in</p>
+                </form>
+            </div>
+            <div class="foot">
+                <p class="planing">Login | Register</p>
+                <p class="trad">English • French</p>
+                <p class="dev">HTML5 • CSS3 • FontAwesome • JavaScript • JQuery • FontForWeb.com • Python • Django • MySQL</p>
+                <p class="join-us">Join us</p>
+                
+                <div class="social flex j-center a-space">
+                    <div class="each-social join-facebook">
+                        <i class="fab fa-facebook"></i>
+        
+                    </div>
+                    <div class="each-social join-instagram">
+                        <i class="fab fa-instagram"></i>
+                         
+                    </div>
+                    
+                </div>
+                
+                <p class="contact-us">Contact us</p>
+                <div class="social flex j-center a-space">
+                    <div class="each-social join-telegram">
+                        <i class="fab fa-telegram"></i>
+        				
+                    </div>
+                    <div class="each-social join-whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                       
+                    </div>
+                    <div class="each-social join-phone">
+                        <i class="fa fa-phone"></i>
+                        
+        				
+                    </div>
+                    <div class="each-social join-email">
+                        <i class="far fa-envelope"></i>
+                        
+                    </div>
+                    <div class="each-social join-messenger">
+                        <i class="fab fa-facebook-messenger"></i>
+                    </div>
+                </div>
+                <p class="host">Website hosted by <a target="_blank" href="https://pythonanywhere.com">pythonanywhere.com</a></p>
+                <p class="ver">Nikemall 2024 - v24.1.12</p>
+            </div>
+        </div>
+        </div>
+        <div class="black"></div>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static 'js/login.js' %}" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>

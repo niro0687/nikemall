@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Nike-Mall | Change transaction password</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        <link rel="stylesheet" href="{% static 'font/css/all.css' %}" type="text/css" media="all" />
+        <link rel="stylesheet" href="{% static 'fontFamily/font.css' %} ">
+         <link rel="icon" href="{% static 'icon/favicon.png' %}" type="image/png" />
+        <link rel="stylesheet" href="{% static 'css/change_trans_pass.css' %}">
+    </head>
+    <body>
+        <div class="title flex j-center a-center">
+            <p>NikeMall</p>
+        </div>
+        <h1>Change my transaction password</h1>
+        
+        <form action="" method="post">
+            <h3>New transaction password</h3>
+            {% csrf_token %}
+            <input type="hidden" name="user_token" value="{{ request.user.secondinfo.user_token }}">
+            <div class="field old flex j-space a-center">
+                <div class="icon flex j-center a-center">
+                    <i class="fa fa-lock"></i>
+                </div>
+                <input type="password" maxlength="16" minlength="8" name="old_password" {% if error_old_password %}value="{{ old_password }}"{% endif %} required placeholder="Old password">
+            </div>
+            <p class="error error-old-pass" error="{% if error_old_password %}true{% else %}false{% endif %}">Error</p>
+            <div class="field create flex j-space a-center">
+                <div class="icon flex j-center a-center">
+                    <i class="fa fa-lock"></i>
+                </div>
+                <input type="password" maxlength="16" minlength="8" name="create_password" required placeholder="Create password">
+            </div>
+            <p class="error error-create-pass" error="true"></p>
+            <div class="field confirm flex j-space a-center">
+                <div class="icon flex j-center a-center">
+                    <i class="fa fa-lock"></i>
+                </div>
+                <input type="password" maxlength="16" minlength="8" name="confirm_password" required placeholder="Confirm password">
+            </div>
+            <p class="error error-confirm-pass" error="true"></p>
+            <div class="submit flex j-center a-center">
+                <button type="submit">Change transaction password</button>
+            </div>
+        </form>
+        <h4>Note that when you click on the button change password. It could never be canceled, and when your password is changed successfully, NikeMall does not wonder you to disconnect others session than this device of this account but it does it automatically. Thank you!</h4>
+        
+         <div class="home  flex j-center a-center">
+                <a href="{% url 'app:main' %}">Cancel and return home</a>
+            </div>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static 'js/change_trans_pass.js' %}" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>
+

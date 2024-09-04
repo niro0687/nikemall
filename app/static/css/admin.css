@@ -1,0 +1,1220 @@
+body {
+    background: #171717;
+    margin: 0px;
+    padding: 0px;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+p, h1, h2, h3, h4, h5, h6, strong, input, button, em, mark, label, span, i {
+    color: white;
+}
+
+.change-my-pass {
+    position: fixed;
+    background: #171717;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    transition: all 0.3s;
+    height: 100%;
+    z-index: 20;
+}
+.allow {
+    width: 85%;
+    height: 50px;
+    background: #292A2A;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    border-radius: 30px;
+    margin: 30px auto 30px auto;
+}
+.allow .icon,
+.allow .icon-on {
+    width: 15%;
+}
+.allow .text {
+    width: 70%;
+}
+.allow .text p:nth-child(1) {
+    font-size: 12px;
+    font-weight: 800;
+    margin: 0px 0px 5px 5px;
+}
+
+.allow .text p:nth-child(2) {
+    font-size: 10px;
+    font-weight: 500;
+    margin: 0px 0px 0px 5px;
+}
+.allow .text p:nth-child(2).off {
+    color: #707070;
+    font-weight: 500;
+}
+.allow .text p:nth-child(2).on {
+    color: #00FF85;
+    font-weight: 800;
+}
+.allow .icon-on.off i {
+    color: #707070;
+}
+.allow .icon-on.on i {
+    color: #00FF85;
+}
+
+.apk-text {
+    font-size: 20px;
+    text-align: center;
+    margin: 50px 20px 30px 20px;
+    color: #00FF8E;
+    font-weight: 800;
+}
+.btn-upload-new-version {
+    width: 80%;
+    height: 40px;
+    background: linear-gradient(to right, #00E9FF, #00FF7B);
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    border-radius: 30px;
+    margin: 30px auto 30px auto;
+}
+.btn-upload-new-version p {
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+}
+.each-apk-uploaded {
+    width: 75%;
+    height: 55px;
+    border-radius: 10px;
+    background: #353536;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    margin: 20px auto 0px auto;
+}
+.each-apk-uploaded .icon {
+    width: 20%;
+}
+.each-apk-uploaded .don {
+    width: 70%;
+}
+.each-apk-uploaded .don p:nth-child(1) {
+    font-size: 13px;
+    color: white;
+    margin: 0px 0px 2px 0px;
+    font-weight: 800;
+}
+
+.each-apk-uploaded .don p:nth-child(2) {
+    font-size: 9px;
+    color: #007EFF;
+    margin: 0px 0px 2px 0px;
+    font-weight: 800;
+}
+
+.each-apk-uploaded .don p:nth-child(3) {
+    font-size: 8px;
+    color: #BFBFBF;
+    margin: 0px;
+    font-weight: 500;
+}
+
+
+.upload-apk {
+    width: 90%;
+    background: #202020;
+    left: 5%;
+    padding: 20px 0px 20px 0px;
+    top: 25%;
+    display: none;
+    border-radius: 25px;
+    position: fixed;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    z-index: 30;
+}
+
+.upload-apk form .field {
+    width: 80%;
+    height: 50px;
+    margin: 20px auto 5px auto;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    background: #2E2E2E;
+}
+.upload-apk form .field .icon {
+    width: 15%;
+}
+.upload-apk form .field .text {
+    width: 75%;
+}
+.upload-apk h3 {
+    text-align: center;
+    color: #00FF7B;
+    margin: 10px 20px 10px 20px;
+}
+
+.upload-apk form .btn-submit-upload {
+    width: 60%;
+    height: 45px;
+    background: linear-gradient(to right, #00E9FF, #00FF7B);
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    border-radius: 30px;
+    margin: 30px auto 0px auto;
+}
+
+.upload-apk form .btn-submit-upload button {
+    color: white;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.upload-apk form .field .text input {
+    width: 100%;
+    font-size: 13px;
+    margin: 0px;
+    font-weight: 800;
+    color: white;
+}
+
+.upload-apk form .field .text p:nth-child(1) {
+    margin: 0px;
+    font-size: 12px;
+    font-weight: 800;
+    color: white;
+}
+
+.upload-apk form .field .text p:nth-child(2) {
+    margin: 0px;
+    font-size: 8px;
+    font-weight: 500;
+    color: white;
+}
+
+.upload-apk form .field #file {
+    width: 0px;
+    height: 0px;
+}
+
+.user-pass-form .remind {
+    margin: 20px 20px 20px 30px;
+    font-size: 12px;
+    color: #B1B5B4;
+}
+.change-user-pass {
+    position: fixed;
+    background: #1C1C1C;
+    top: 0px;
+    bottom: 0px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    width: 100%;
+    transition: all 0.3s;
+    height: 100%;
+    z-index: 20;
+}
+.blur-pass {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: 30;
+    top: 0px;
+    display: none;
+    position: fixed;
+}
+.field-change-user-pass {
+    transition: all 0.4s;
+    width: 80%;
+    position: fixed;
+    left: 10%;
+    z-index: 31;
+    border-radius: 25px;
+    background: #202020;
+}
+.field-change-user-pass.show {
+    top: 30px;
+    opacity: 1;
+}
+.field-change-user-pass.hide {
+    top: -450px;
+    opacity: 0;
+}
+.field-change-user-pass .style {
+    width: 10%;
+    background: #5B5B5B;
+    height: 5px;
+    margin: 5px auto 5px auto;
+    border-radius: 10px;
+}
+.field-change-user-pass .flag {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+}
+.field-change-user-pass .email {
+    text-align: center;
+    margin: 5px 20px 20px 20px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.change-user-pass .display-result {
+    width: 100%;
+    margin: 100px 0px 0px 0px;
+}
+
+.change-user-pass .display-result .inst {
+    text-align: center;
+    font-size: 11px;
+    margin: 200px 20px 0px 20px;
+    color: #979797;
+}
+.change-user-pass .display-result .len {
+    font-size: 20px;
+    margin: 20px 20px 20px 30px;
+    color: #A9ABAB;
+}
+
+.change-user-pass.show {
+    left: 0px;
+}
+.change-user-pass.hide {
+    left: 100%;
+}
+
+.change-user-pass .main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.change-user-pass .main .search {
+    width: 90%;
+    left: 5%;
+    border-radius: 30px;
+    top: 20px;
+    position: absolute;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    height: 50px;
+    background: #2A2A2A;
+}
+.change-user-pass .main .search .icon {
+    width: 15%;
+}
+.change-user-pass .main .search input {
+    width: 65%;
+}
+
+.change-my-pass .main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.change-my-pass .main h3 {
+    margin: 50px 20px 20px 20px;
+    text-align: center;
+}
+
+.main form.my-pass-form {
+    margin-top: 30px;
+}
+.main form.my-pass-form .field,
+form.user-pass-form .field {
+    width: 85%;
+    height: 50px;
+    margin: 10px auto 5px auto;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    background: #2C2C2C;
+}
+.main form.my-pass-form .field .icon,
+form.user-pass-form .field .icon {
+    width: 15%;
+}
+.main form.my-pass-form .field input,
+form.user-pass-form .field input {
+    width: 65%;
+}
+.my-pass-form .error, .user-pass-form .error {
+    margin: 0px 0px 0px 40px;
+    font-size: 11px;
+    color: red;
+    display: none;
+    font-weight: 800;
+}
+.change-my-pass .main .conseil {
+    text-align: center;
+    font-weight: 800;
+    font-size: 10px;
+    color: #B0B0B0;
+}
+.change-my-pass .main .cancel-change-pass {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border-radius: 30px;
+    width: 40px;
+    height: 40px;
+    background: #313131;
+}
+
+.my-pass-form .btn-valid-change,
+.user-pass-form .btn-valid-change {
+    width: 80%;
+    height: 45px;
+    border-radius: 25px;
+    margin: 20px auto 10px auto;
+    background: linear-gradient(to right, #00B2FF, #0067FF);
+}
+.user-pass-form .btn-cancel-change {
+    width: 80%;
+    height: 45px;
+    border-radius: 25px;
+    margin: 0px auto 20px auto;
+    background: #5E5E5E;
+}
+
+.btn-valid-change button {
+    font-weight: 900;
+    font-size: 12px;
+}
+.btn-cancel-change p {
+    font-weight: 900;
+    color: #C7C7C7;
+    font-size: 12px;
+}
+
+.user-pass-form .btn-valid-change svg {
+    animation: rotatesvgchange 2s infinite linear;
+    width: 20px;
+    display: none;
+    height: 20px;
+}
+
+@keyframes rotatesvgchange {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.user-pass-form .btn-valid-change svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke: white;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 40;
+    transform: translate(5px, 5px);
+    animation: animatesvgchange 2s linear infinite;
+}
+@keyframes animatesvgchange {
+    0%, 100% {
+        stroke-dashoffset: 60;
+        stroke: #00FFAD;
+    }
+    50% {
+        stroke-dashoffset: 0;
+        stroke: #FFFFFF;
+    }
+    50.1% {
+        stroke-dashoffset: 200;
+        stroke: #00F8FF;
+    }
+}
+
+
+.change-my-pass.show {
+    left: 0%;
+}
+.change-my-pass.hide {
+    left: 100%;
+}
+.header .icon {
+    width: 10%;
+}
+.header .text {
+    width: 70%;
+}
+
+.header {
+    position: fixed;
+    top: 15px;
+    width: 80%;
+    z-index: 9;
+    left: 10%;
+    height: 45px;
+    border-radius: 30px;
+    background: linear-gradient(to right, #00B8FF, #005FFF);
+}
+.header .text p {
+    font-size: 13px;
+    text-align: center;
+    font-weight: 800;
+}
+.wel {
+    margin: 20px 20px 20px 20px;
+    text-align: center;
+}
+
+.you-can {
+    font-size: 12px;
+    text-align: center;
+    margin: 30px;
+    color: #C4C4C4;
+}
+
+.win {
+    width: 95%;
+    padding-bottom: 5px;
+    border-bottom: 2px white solid;
+    margin: 20px auto 10px auto;
+}
+
+.solde {
+    margin-top: 30px;
+    text-align: center;
+}
+.solde-value {
+    margin-top: 10px;
+    font-size: 40px;
+    color: #00FFD1;
+    text-align: center;
+    font-weight: 800;
+}
+
+
+.win .one {
+    border-right: 2px solid white;
+    width: 60%;
+}
+.win .one p:nth-child(1) {
+    color: #00FFFB;
+    font-size: 12px;
+    font-weight: 800;
+}
+.win .one p:nth-child(2) {
+    font-size: 20px;
+    font-weight: 800;
+}
+.win .detail p:nth-child(2) {
+    color: #B5B9B7;
+    font-size: 10px;
+    margin: 0px 0px 5px 10px;
+}
+.win .detail p:nth-child(3) {
+    color: #B5B9B7;
+    font-size: 10px;
+    margin: 0px 0px 5px 10px;
+}
+
+.win .detail p:nth-child(1) {
+    font-size: 12px;
+    font-weight: 800;
+    margin: 15px 0px 5px 10px;
+}
+.lost .one {
+    width: 60%;
+    border-left: 2px solid white;
+}
+
+
+.lost {
+    width: 95%;
+    padding-bottom: 5px;
+    border-bottom: 2px white solid;
+    margin: 30px auto 30px auto;
+}
+
+.lost .one p:nth-child(1) {
+    color: #D10031;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 800;
+}
+.lost .one p:nth-child(2) {
+    font-size: 20px;
+    text-align: right;
+    font-weight: 800;
+}
+
+.lost .detail p:nth-child(2) {
+    color: #B5B9B7;
+    font-size: 10px;
+    margin: 0px 5px 5px 0px;
+}
+
+.lost .detail p:nth-child(3) {
+    color: #B5B9B7;
+    font-size: 10px;
+    margin: 0px 5px 5px 0px;
+}
+.lost .detail p:nth-child(1) {
+    font-size: 12px;
+    font-weight: 900;
+    margin: 15px 5px 5px 0px;
+}
+
+.little-box {
+    height: 150px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    display: inline-block;
+    position: relative;
+}
+.little-box .icon {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+}
+.users {
+    margin-left: 10px;
+    width: 40%;
+    background: #323132;
+}
+
+.withdraw {
+    margin-left: 10px;
+    width: 52%;
+    background: #202121;
+}
+
+.vip {
+    margin-left: 10px;
+    width: 62%;
+    background: #1A1B1B;
+}
+
+.vip0 {
+    margin-left: 10px;
+    width: 30%;
+    background: #444747;
+}
+
+
+.loading {
+    z-index: 20;
+    width: 100%;
+    bottom: 20px;
+    position: fixed;
+    top: 20px;
+    display: none;
+    border-radius: 30px;
+}
+.loading div {
+    width: 80px;
+    height: 80px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+}
+.loading div svg {
+    animation: rotatesvg 2s infinite linear;
+    width: 40px;
+    height: 40px;
+}
+@keyframes rotatesvg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.loading div svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke: white;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 40;
+    transform: translate(10px, 10px);
+    animation: animatesvg 1s linear infinite;
+}
+@keyframes animatesvg {
+    0%, 100% {
+        stroke-dashoffset: 60;
+        stroke: #00F9FF
+    }
+    50% {
+        stroke-dashoffset: 0;
+        stroke: #B300FF
+    }
+    50.1% {
+        stroke-dashoffset: 200;
+        stroke: #00FF80;
+    }
+}
+.box-alert {
+    position: fixed;
+    width: 100%;
+    z-index: 30;
+    transition: all 0.2s;
+}
+.box-alert.hide {
+    bottom: -50px;
+}
+.box-alert.show {
+    bottom: 30px;
+}
+.box-alert div {
+    display: inline-block;
+    border-radius: 30px;
+    background: red;
+}
+.box-alert div p {
+    margin: 13px 25px 10px 25px;
+    color: #E7E7E7;
+    font-weight: 900;
+    font-size: 11px;
+}
+
+.vip1, .vip2, .vip3, .vip4, .vip5, .vip6, .vip7, .vip8, .vip9 {
+    margin-left: 7px;
+    width: 30%;
+    background: #444747;
+}
+
+.vip1 {
+    background: #464646;
+}
+.vip2 {
+    background: #292927;
+}
+.vip3 {
+    background: #383838;
+}
+
+.vip4 {
+    background: #383838;
+}
+.vip5 {
+    background: #464646;
+}
+.vip6 {
+    background: #292927;
+}
+
+.vip7 {
+    background: #323132;
+}
+.vip8 {
+    background: #202121;
+}
+.vip9 {
+    background: #1A1B1B;
+}
+
+.hide-btn {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+.option .box {
+    width: 75%;
+    border-radius: 5px;
+    background: #202222;
+    padding-bottom: 20px;
+    position: relative;
+}
+.option .box h3 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #9D9D9D;
+}
+.option .box .cancel {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: #2A2A2A;
+}
+.option .box .btn-op {
+    width: 80%;
+    height: 43px;
+    border-radius: 30px;
+    margin: 10px auto 15px auto;
+    background: linear-gradient(to right, #009FFF, #004DFF);
+}
+.option .box .btn-op .icon {
+    width: 15%;
+}
+.option .box .btn-op .text {
+    width: 80%;
+}
+
+.option .box .btn-op .text p {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.second-box {
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 12;
+    background: #171717;
+    transition: all 0.3s;
+}
+.all-users-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.all-users-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+.vip-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.vip-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+.vip0-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.vip0-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+.vip1-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.vip1-box.hide {
+    opacity: 0;
+    left: 100%;
+}
+
+.vip2-box.show {
+    left: 0px;
+    opacity: 1;
+}
+.vip2-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+
+.vip3-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.vip3-box.hide {
+    opacity: 0;
+    left: 100%;
+}
+
+.vip4-box.show {
+    left: 0px;
+    opacity: 1;
+}
+.vip4-box.hide {
+    opacity: 0;
+    left: 100%;
+}
+
+.vip5-box.show {
+    left: 0px;
+    opacity: 1;
+}
+.vip5-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+.vip6-box.show {
+    left: 0px;
+    opacity: 1;
+}
+.vip6-box.hide {
+    opacity: 0;
+    left: 100%;
+}
+
+.vip7-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.vip7-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+.vip8-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.vip8-box.hide {
+    opacity: 0;
+    left: 100%;
+}
+
+.vip9-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.vip9-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+.vip10-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.vip10-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+.withdraw-box.show {
+    opacity: 1;
+    left: 0px;
+}
+.withdraw-box.hide {
+    left: 100%;
+    opacity: 0;
+}
+
+.second-box .main {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+}
+.cancel-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 30px;
+    background: #2B2D2D;
+}
+
+.main h2 {
+    margin: 50px 20px 20px 20px;
+    text-align: center;
+    color: #00FFDE;
+}
+.main p.number-user {
+    margin: 0px 20px 20px 20px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 14px;
+}
+.each-user {
+    width: 85%;
+    padding: 15px 0px 12px 0px;
+    margin: 10px auto 10px auto;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    border-radius: 7px;
+    background: #2E2E2E;
+}
+.each-user .icon {
+    width: 60px;
+    border: 2px solid white;
+    height: 60px;
+    border-radius: 100%
+}
+.each-user .icon i {
+    font-size: 25px;
+}
+.each-user .detail {
+    width: 70%;
+}
+.each-user .detail p:nth-child(1) {
+    font-weight: 900;
+    font-size: 13px;
+    margin: 0px 0px 5px 0px;
+    color: #16EAFF;
+}
+.each-user .detail p:nth-child(2) {
+    font-weight: 900;
+    font-size: 11px;
+    color: #D8D8D8;
+    margin: 0px 0px 5px 0px;
+}
+.each-user .detail p:nth-child(3) {
+    font-weight: 900;
+    color: #D8D8D8;
+    font-size: 11px;
+    margin: 0px 0px 5px 0px;
+}
+.each-user .detail p:nth-child(4) {
+    font-weight: 900;
+    color: #D8D8D8;
+    font-size: 11px;
+    margin: 0px 0px 5px 0px;
+}
+.each-user .detail p:nth-child(5) {
+    font-weight: 900;
+    color: #0079FF;
+    font-size: 11px;
+    margin: 0px 0px 5px 0px;
+}
+.official-password-change {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+}
+
+.each-user .detail p:nth-child(6) {
+    font-weight: 900;
+    font-size: 8px;
+    color: #A7A7A7;
+    margin: 0px 0px 5px 0px;
+}
+
+.option .box .style {
+    width: 15%;
+    height: 5px;
+    margin: 5px auto 5px auto;
+    border-radius: 10px;
+    background: #343434;
+}
+.option {
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    display: none;
+    height: 100%;
+    z-index: 11;
+    width: 100%;
+}
+.black-page {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    display: none;
+    height: 100%;
+    bottom: 0px;
+    background: rgba(0,0,0,0.7);
+}
+
+.vip10 {
+    margin-left: 10px;
+    width: 46%;
+    background: #323132;
+}
+
+.payed {
+    margin-left: 10px;
+    width: 46%;
+    background: #282828;
+}
+
+
+.little-box .text {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+.little-box .text p {
+    font-size: 10px;
+    font-weight: 800;
+    text-align: center;
+    color: #A8A8A8;
+}
+.little-box .val {
+    text-align: center;
+    font-weight: 900;
+    margin-top: 50px;
+    font-size: 30px;
+}
+
+.hi {
+    margin: 100px 20px 20px 20px;
+    text-align: center;
+    color: #7C7C7C;
+}
+
+.each-request {
+    margin: 10px auto 10px auto;
+    background: #222222;
+    width: 93%;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    padding: 10px 0px 15px 0px;
+}
+.each-request .val {
+    width: 35%;
+}
+.each-request .detail {
+    width: 65%;
+}
+.each-request .val p:nth-child(1) {
+    font-size: 10px;
+    margin: 5px 0px 5px 10px;
+    font-weight: 900;
+}
+.each-request .val p:nth-child(2) {
+    font-size: 30px;
+    margin: 10px 5px 0px 10px;
+    font-weight: 900;
+}
+
+.detail .choice {
+    width: 90%;
+    margin-top: 15px;
+}
+.detail .choice div {
+    width: 40%;
+    border-radius: 20px;
+    height: 35px;
+}
+
+.detail .choice div.refuse {
+    background: #959595;
+}
+.detail .choice div.send {
+    background: #39C6FF;
+}
+.detail .choice div button {
+    font-size: 10px;
+    font-weight: 900;
+}
+.each-request .detail .email {
+    color: #00FFAD;
+    font-size: 13px;
+    font-weight: 900;
+    margin: 5px 0px 5px 0px;
+}
+.each-request .detail p.current-vip {
+    color: #B3ECFF;
+    font-size: 11px;
+    font-weight: 900;
+    margin: 5px 0px 5px 0px;
+}
+.each-request .detail p.vip-req {
+    color: #FF00FD;
+    font-size: 11px;
+    font-weight: 900;
+    margin: 5px 0px 5px 0px;
+}
+.each-request .detail p.telegram {
+    font-size: 10px;
+    font-weight: 900;
+    margin: 5px 0px 5px 0px;
+}
+.each-request .detail p.balance {
+    font-size: 10px;
+    font-weight: 900;
+    margin: 5px 0px 5px 0px;
+}
+.each-request .detail p.datetime {
+    color: #BDBDBD;
+    font-size: 8px;
+    font-weight: 900;
+    margin: 5px 0px 5px 0px;
+}
+
+.detail .data {
+    width: 90%;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+.detail .data p {
+    font-size: 11px;
+    color: #CCF3FF;
+    font-weight: 800;
+    margin: 5px 5px 0px 0px;
+}
+
+.little-box .percent {
+    top: 15px;
+    left: 15px;
+    position: absolute;
+}
+.little-box .percent p {
+    font-size: 12px;
+    color: #00FFA0;
+    margin: 0px;
+    font-weight: 900;
+}
+
+.little-box .total-amount {
+    top: 15px;
+    left: 15px;
+    position: absolute;
+}
+.little-box .total-amount p {
+    font-size: 16px;
+    color: #00B2FF;
+    margin: 0px;
+    font-weight: 900;
+}
+
+
+.load-search {
+    z-index: 20;
+    width: 100%;
+    display: none;
+    position: absolute;
+    top: 300px;
+    border-radius: 30px;
+}
+.load-search div {
+    width: 80px;
+    height: 80px;
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+}
+.load-search div svg {
+    animation: rotatesvgTwo 2s infinite linear;
+    width: 40px;
+    height: 40px;
+}
+@keyframes rotatesvgTwo {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.load-search div svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke: white;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 40;
+    transform: translate(10px, 10px);
+    animation: animatesvgTwo 1s linear infinite;
+}
+@keyframes animatesvgTwo {
+    0%, 100% {
+        stroke-dashoffset: 60;
+        stroke: #00F9FF
+    }
+    50% {
+        stroke-dashoffset: 0;
+        stroke: #B300FF
+    }
+    50.1% {
+        stroke-dashoffset: 200;
+        stroke: #00FF80;
+    }
+}

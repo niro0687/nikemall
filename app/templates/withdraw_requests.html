@@ -1,0 +1,27 @@
+
+
+<p class="number-user">{% if all_requests.count == 0 %}No request 'til now{% elif all_requests.count == 1 %}1 request{% else %}{{ all_requests.count }} requests.{% endif %}</p>
+{% for req in all_requests %}
+<div class="each-request flex j-center a-center" id="req-{{ req.pk }}">
+    <div class="val" >
+        <p>Amount</p>
+        <p>${{ req.value }}</p>
+    </div>
+    <div class="detail">
+        <p class="email">{{ req.user.email }}</p>
+        <p class="current-vip">Level: VIP{{ req.user.secondinfo.vio }}</p>
+        <p class="telegram">Telegram: @{{ req.user.secondinfo.telegram }}</p>
+        <p class="telegram">Withdraw method: {{ req.withdraw_method.network }} ({{ req.withdraw_method.adress }})</p>
+        <p class="balance">Balance: ${{ req.user.secondinfo.balance }}</p>
+        <p class="datetime">{{ req.datetime_set }}</p>
+        <div class="choice flex a-center j-space">
+            <div class="n-btn refuse flex j-center a-center" id_req="{{ req.pk }}">
+                <button>Deny</button>
+            </div>
+            <div class="send flex j-center a-center" id_req="{{ req.pk }}">
+                <button>Sent</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

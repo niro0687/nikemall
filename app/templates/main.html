@@ -1,0 +1,1112 @@
+
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>NikeMall | Main</title>
+        <link rel="stylesheet" href="{% static 'font/css/all.css' %} ">
+        <link rel="stylesheet" href="{% static 'fontFamily/font.css' %}">
+        <link rel="icon" href="{% static 'icon/favicon.png' %}" type="image/png" />
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    
+    <body>
+        <div class="page-loading">
+            <div class="main-it flex j-center a-center">
+                <div class="logo-anim flex j-center a-center">
+                    <img src="{% static 'img/vip.jpg' %}" alt="" style="border-radius: 100%;">
+                </div>
+                <div class="pp">
+                    <h1>NikeMall</h1>
+                    <p>v23.1.10</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="blur-every f"></div>
+        
+        <div class="company-box">
+            <div class="main-company">
+                <div class="header-with flex a-center">
+                    <div class="logo-with flex j-center a-center">
+                        <i class="fa fa-box"></i>
+                    </div>
+                    <div class="text-with flex a-center j-center">
+                        <h1>Company</h1>
+                    </div>
+                    <div class="close-company flex a-center j-center n-btn">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+            
+                <div class="body-company remove-scrollBar">
+                    <h1>Welcome to <strong>Nike Mall</strong></h1>
+                    <p class="sinc">We sincerely invite you to join and participate. Register as a member and you can receive 0.1 USDT every day!</p>
+    
+                    <p class="reg">➡️Registration link: <a href="">https://nike-mall.com</a></p>
+                    <p>
+                    
+                    <ol>
+                        <li>Only USDT and TRX currencies can be used for deposit investment, and the TRC20 network must be selected.</li>
+                        <li>New tasks are refreshed every day at 00:00 New York time!</li>
+                        <li>The platform withdrawal fee is 0, the minimum withdrawal is 2USDT, the withdrawal is available within seconds, and you can recharge and withdraw money freely throughout the day!</li>
+                    </ol>
+                    
+                    <p class="contact">Contact Administrator if you want to know more information.<br>Thank you!</p>
+                </div>
+            </div>
+        </div>
+        <div class="black-computer"></div>
+        <div class="language-box">
+            <div class="main-language">
+                <div class="header-with flex a-center">
+                    <div class="logo-with flex j-center a-center">
+                        <i class="fa fa-globe"></i>
+                    </div>
+                    <div class="text-with flex a-center j-center">
+                        <h1>Language</h1>
+                    </div>
+                    <div class="close-language flex a-center j-center n-btn">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+            
+                <div class="body-language remove-scrollBar">
+                    <p class="tt">Choose your language</p>
+                    <div class="each-lang en flex j-space a-center n-btn" lang="en">
+                        <div class="text">
+                            <p>English</p>
+                            <p>Available</p>
+                        </div>
+                        <div class="rond flex j-center a-center">
+                            <span class="active"></span>
+                        </div>
+                    </div>
+                    <div class="each-lang fr flex j-space a-center n-btn" lang="fr">
+                        <div class="text">
+                            <p>French</p>
+                            <p>Available</p>
+                        </div>
+                        <div class="rond flex j-center a-center">
+                            <span class="disabled"></span>
+                        </div>
+                    </div>
+                    <div class="valid-change flex j-center a-center n-btn">
+                        <button>Change now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="transaction-detail-box">
+            <div class="main-transaction-detail">
+                <div class="header-with flex a-center">
+                    <div class="logo-with flex j-center a-center">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <div class="text-with flex a-center j-center">
+                        <h1>Transaction detail</h1>
+                    </div>
+                    <div class="close-transaction-detail flex a-center n-btn j-center">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+            
+                <div class="body-transaction-detail remove-scrollBar">
+                    <h3>All transactions</h3>
+                    {% if reqs.count == 0 %}
+                    <p class="no-trans">No transaction 'til now</p>
+                    {% else %}
+                    {% for req in reqs %}
+                    {% if req.is_withdraw %}
+                    <div class="each-trans">
+                        <div class="icon flex j-space a-center">
+                            <div class="icon-logo flex j-center a-center">
+                                <i class="fa fa-wallet"></i>
+                            </div>
+                            <div class="wait flex j-center a-center">
+                                {% if req.is_valid %}
+                                <i class="fa fa-check valid"></i>
+                                {% elif req.is_refused %}
+                                <i class="fa fa-times error"></i>
+                                {% else %}
+                                <i class="fa fa-ellipsis-h cours"></i>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p class="method-title with-tt">Withdraw</p>
+                        <p class="amount">- ${{ req.value }}</p>
+                        <p class="with-method wtt" val="{{ req.withdraw_method.network }} - {{ req.withdraw_method.adress }}">Withdraw method: <strong>{{ req.withdraw_method.network }} - {{ req.withdraw_method.adress }}</strong></p>
+                        {% if req.is_valid %}
+                        <p class="is-valid">Validation: <strong class="valid">Valid with successfully</strong></p>
+                        {% elif req.is_refused %}
+                        <p class="is-valid">Valid: <strong class="error">Request refused</strong></p>
+                        {% else %}
+                        <p class="is-valid">Validation: <strong class="cours">En cours ...</strong></p>
+                        {% endif %}
+                        <p class="valid-datetime" val="{{ req.datetime_validation }}">Validation date: <strong>{{ req.datetime_validation }}</strong></p>
+                        <p class="datetime">{{ req.datetime_set }}</p>
+                    </div>
+                    {% else %}
+                    <div class="each-trans">
+                        <div class="icon flex j-space a-center">
+                            <div class="icon-logo flex j-center a-center">
+                                <i class="fa fa-money-bill-alt"></i>
+                            </div>
+                            <div class="wait flex j-center a-center">
+                                {% if req.is_valid %}
+                                <i class="fa fa-check valid"></i>
+                                {% elif req.is_refused %}
+                                <i class="fa fa-times error"></i>
+                                {% else %}
+                                <i class="fa fa-ellipsis-h cours"></i>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <p class="method-title rech-tt">Recharge</p>
+                        <p class="amount">+ ${{ req.value }}</p>
+                        
+                        <p class="with-method rtt" val="{{ recharge_code }}">Recharge code: <strong>{{ recharge_code }}</strong></p>
+                        
+                        <p class="vip-demande" val="VIP{{ req.level_needed }}">VIP request: <strong>VIP{{ req.level_needed }}</strong></p>
+                        <p class="username" val="{{ req.username }}">Username: <strong>{{ req.username }}</strong></p>
+                        <p class="email" val="{{ req.email }}">Email: <strong>{{ req.email }}</strong></p>
+                        <p class="trans-datetime" val="{{ req.transaction_datetime }}">Transaction date: <strong>{{ req.transaction_datetime }}</strong></p>
+                        {% if req.is_valid %}
+                        <p class="is-valid">Validation: <strong class="valid">Valid with successfull</strong></p>
+                        {% elif req.is_refused %}
+                        <p class="is-valid">Validation: <strong class="error">Request denied</strong></p>
+                        {% else %}
+                        <p class="is-valid">Validation: <strong class="cours">En cours ...</strong></p>
+                        {% endif %}
+                        <p class="valid-datetime" val="{{ req.datetime_set }}">Validation date: <strong>{{ req.datetime_validation }}</strong></p>
+                        <p class="datetime">{{ req.datetime_set }}</p>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="withdraw-method-box">
+            <div class="main-withdraw-method">
+                <div class="header-with flex a-center">
+                    <div class="logo-with flex j-center a-center">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                    <div class="text-with flex a-center j-center">
+                        <h1>Withdraw method</h1>
+                    </div>
+                    <div class="close-withdraw-method flex a-center j-center n-btn">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+                <div class="body-withdraw-method">
+                    <h3>Set withdraw method</h3>
+                    {% if all_withdraw_methods.count > 0 %}
+                    <p class="with-set">You have more than one withdraw method set.<br>Note that, the all method set are never be modified. But if you want to modified one of them, you can add another one and choose it after as your withdraw method if want to withdraw your balance. Thank you.
+                    </p>
+                    {% else %}
+                    <p class="with-set">You don't have a withdraw method set. <br>Add new to make an withdraw.</p>
+                    {% endif %}
+                    {% for w in all_withdraw_methods %}
+                    <div class="each-method-set">
+                        <p>{{ w.network }}</p>
+                        <p>{{ w.adress }}</p>
+                        <p>{{ w.datetime }}</p>
+                    </div>
+                    {% endfor %}
+                    <form action="" class="set-withdraw-method-form">
+                        <h4>New withdraw method</h4>
+                        <p class="pls">Please fill out these two fields below to add a new withdraw method.</p>
+                        <div class="network field flex a-center j-space">
+                            <div class="icon flex j-center a-center">
+                                <i class="far fa-user"></i>
+                            </div>
+                            <div class="text">
+                                <select name="" id="" required>
+                                    <option value="none">No option choosen</option>
+                                    {% for network in available_withdraw_methods %}
+                                    <option value={{ network }}>{{ network }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
+                        <span class="error-set error-network">nsjd</span>
+                        <div class="adress field flex a-center j-space">
+                            <div class="icon flex j-center a-center">
+                                <i class="far fa-user"></i>
+                            </div>
+                            <div class="text">
+                               <input type="text" placeholder="Adress" required minlength="10"  maxlength="50">
+                            </div>
+                        </div>
+                        <span class="error-set error-adress">nsnsn</span>
+                        <div class="btn-submit-set-withdraw-method flex j-center">
+                            <button type="submit">Save this method</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="message flex j-center a-center">
+            <p></p>
+        </div>
+        <div class="rule-box">
+            <div class="main-rule">
+                <div class="header-with flex a-center">
+                    <div class="logo-with flex j-center a-center">
+                        <i class="fa fa-chart-bar"></i>
+                    </div>
+                    <div class="text-with flex a-center j-center">
+                        <h1>Rule</h1>
+                    </div>
+                    <div class="close-rule flex a-center j-center n-btn">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+            
+                <div class="body-rule remove-scrollBar">
+                    <h1>Welcome to <strong>Nike Mall</strong></h1>
+                    <p class="sinc">We sincerely invite you to join and participate. Register as a member and you can receive 0.1 USDT every day!</p>
+    
+                    <p class="reg">➡️Registration link: <a href="">https://nike-mall.com</a></p>
+                    <p>
+                        
+                    <p class="sign">Sign-up bonus: 50 USDT, minimum deposit: 20 USDT</p>
+                    
+                    <p class="mall">➡️Mall customer service:</p>
+                    <ol>
+                        <li>Only USDT and TRX currencies can be used for deposit investment, and the TRC20 network must be selected.</li>
+                        <li>New tasks are refreshed every day at 00:00 New York  time!</li>
+                        <li>The platform withdrawal fee is 0, the minimum withdrawal is 2USDT, the withdrawal is available within seconds, and you can recharge and withdraw money freely throughout the day!</li>
+                    </ol>
+                    <span class="sep-line"></span>
+                    <p class="list-vip">
+                    VIP1 quota: 20 USDT, daily income: 1.2 USDT<br>
+                    VIP2 quota: 40 USDT, daily income: 2 USDT<br>
+                    VIP3 quota: 60 USDT, daily income:  3.5 USDT<br>
+                    VIP4 quota: 80 USDT, daily income: 4.5 USDT<br>
+                    VIP5 quota: 100 USDT, daily income: 6.6 USDT<br>
+                    VIP6 quota: 120 USDT, daily income: 7.2 USDT<br>
+                    VIP7 quota: 140 USDT, daily income: 9.1 USDT<br>
+                    VIP8 quota: 160 USDT, daily income: 9.8 USDT<br>
+                    VIP9 quota: 180 USDT, daily income: 12.6 USDT<br>
+                    VIP10 quota: 200 USDT, daily income: 13.6 USDT</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="loading flex a-center j-center">
+            <div class="flex j-center a-center">
+                <svg>
+                    <circle r="10" cx="10" cy="10"></circle>
+                </svg>
+            </div>
+        </div>
+        
+        <div class="recharge-box">
+            <div class="main-recharge">
+                <div class="header-with flex a-center">
+                    <div class="logo-with flex j-center a-center">
+                        <i class="fa fa-money-bill-alt"></i>
+                    </div>
+                    <div class="text-with flex a-center j-center">
+                        <h1>Recharge</h1>
+                    </div>
+                    <div class="close-recharge flex a-center j-center n-btn">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+                <div class="body-recharge remove-scrollBar">
+                    <h2>Recharge QR Code</h2>
+                    <div class="qr-code flex a-center j-center">
+                        <img src="{% static 'img/qr_code.JPG' %}" alt="">
+                    </div>
+                    <div class="link flex a-center j-space">
+                        <input type="text" placeholder="Link" value="{{ recharge_code }}">
+                        <div class="btn-copy-recharge copy-link flex j-center a-center">
+                            <i class="far fa-clone"></i>
+                        </div>
+                    </div>
+                    <p class="little-text">Please, make sure that you deposit network is USDT-TRC20. Other network assets cannot be retrieved after depositing. Thank you.</p>
+                    <div class="btn-submit-recharge flex a-center j-center n-btn">
+                        <p>Recharge my account</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="hidden" name="user_token" value="{{ request.user.secondinfo.user_token }}" />
+        <div class="withdraw-box">
+            <div class="main-withdraw">
+                <div class="header-with flex a-center">
+                    <div class="logo-with flex j-center a-center">
+                        <i class="fa fa-wallet"></i>
+                    </div>
+                    <div class="text-with flex a-center j-center">
+                        <h1>Withdraw</h1>
+                    </div>
+                    <div class="close-with flex a-center j-center n-btn">
+                        <i class="fa fa-close"></i>
+                    </div>
+                </div>
+                <div class="body-with remove-scrollBar">
+                    <h3 class="advice">Get your paycheck.</h3>
+                    <p class="des-advice">Fill out these 3 fields to get your paycheck.</p>
+                    <div class="box-fields">
+                        <h3 class="my-amount">Balance available</h3>
+                        <p class="value" value="{{ request.user.secondinfo.balance }}">${{ request.user.secondinfo.balance }}</p>
+                        <form action="" class="withdraw-form">
+                            {% csrf_token %}
+                            <div class="email flex a-center">
+                                <div class="icon flex a-center j-center">
+                                    <i class="fa fa-money-bill-alt"></i>
+                                </div>
+                                <input type="tel" placeholder="Amount" required minlength="1" maxlength="3">
+                            </div>
+                            <p class="error-with error-amount">Najhdd</p>
+                            <div class="password flex a-center">
+                                <div class="icon flex a-center j-center">
+                                    <i class="fa fa-lock"></i>
+                                </div>
+                                <input type="password" placeholder="Transaction password" required minlength="6" maxlength="16">
+                                <div class="show-password">
+                                    <i class="fa fa-eye-slash"></i>
+                                </div>
+                            </div>
+                            <p class="error-with error-trans">Najhdd</p>
+                            <div class="password ch-with-method flex a-center">
+                                <div class="choose-set-method">
+                                    
+                                </div>
+                                <div class="icon flex a-center j-center">
+                                    <i class="fa fa-rocket"></i>
+                                </div>
+                                <div class="text n-btn">
+                                    <p>Choose withdraw method</p>
+                                    <p id="">None</p>
+                                </div>
+                                <div class="show-password">
+                                    <i class="fa fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <p class="error-with error-method">Najhdd</p>
+                            <div class="btn-submit-with flex a-center j-center n-btn">
+                                <button type="sumbit">Sumbit</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <p class="bref">Note that:</p>
+                    <div class="all">
+                        <ol>
+                            <li>Minimum of amount withdraw is $1</li>
+                            <li>Make sure that you withdraw method is already set before you get a withdraw.</li>
+                            <li>Your request will be valid within 48 hours (if not, please contact the administrator)</li>
+                            <li>You'll have a notification if your request is valid</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-street">
+        <div class="under-main">
+        <div class="block-recharge hide">
+            <div class="main-block-recharge">
+                <span class="style"></span>
+                <h3>Upgrade your VIP</h3>
+                <p class="l-des">Please, fill out some fields to identify your recharge and to update your VIP.</p>
+                <form action="" class="update-vip-form">
+                    <div class="each-field qrcode-field flex a-center j-space">
+                        <div class="ic flex j-center a-center">
+                            <i class="fa fa-qrcode"></i>
+                        </div>
+                        <input type="text" class="qrcode-field" placeholder="Recharge code" required minlength="20">
+                    </div>
+                    <span class="error-rech error-adress"></span>
+                    <div class="each-field amount-field flex a-center j-space">
+                        <div class="ic flex j-center a-center">
+                            <i class="fa fa-dollar-sign"></i>
+                        </div>
+                        <input type="tel" placeholder="Amount" required maxlength="3" minlength="2">
+                    </div>
+                    <span class="error-rech error-value"></span>
+                    <div class="each-field vip-field flex a-center j-space">
+                        <div class="ic flex j-center a-center">
+                            <i class="far fa-gem"></i>
+                        </div>
+                        <input type="tel" class="vip-field" placeholder="VIP" required maxlength="2" minlength="1">
+                    </div>
+                    
+                    <span class="error-rech error-vip"></span>
+                    <div class="each-field email-field flex a-center j-space">
+                        <div class="ic flex j-center a-center">
+                            <i class="far fa-envelope"></i>
+                        </div>
+                        <input type="email" placeholder="Email">
+                    </div>
+                    <span class="error-rech error-email"></span>
+                    <div class="each-field username-field flex a-center j-space">
+                        <div class="ic flex j-center a-center">
+                            <i class="far fa-user"></i>
+                        </div>
+                        <input type="text" minlength="4" maxlength="30" placeholder="Username">
+                    </div>
+                    <span class="error-rech error-username"></span>
+                    <div class="each-field date-field flex a-center j-space">
+                        <div class="ic flex j-center a-center">
+                            <i class="fa fa-calendar-alt"></i>
+                        </div>
+                        <input type="date" required value="{{ date_value }}">
+                    </div>
+                    <span class="error-rech error-date"></span>
+                    <div class="each-field time-field flex a-center j-space">
+                        <div class="ic flex j-center a-center">
+                            <i class="fa fa-clock"></i>
+                        </div>
+                        <input type="text" required placeholder="Time (ex: 12:23:18)" minlength="8" maxlength="8">
+                    </div>
+                    <span class="error-rech error-time"></span>
+                    <div class="btn-submit-form-reg flex j-center a-center n-btn">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="black-recharge"></div>
+        <div class="header flex a-center">
+            <div class="logo flex j-center a-center">
+                <i class="fa fa-user"></i>
+                <img src="{% static 'img/logo.png' %}" alt="">
+            </div>
+            <div class="text flex a-center j-center">
+                <h1>nike-mall</h1>
+            </div>
+            <div class="lang btn-open-language n-btn flex a-center j-center">
+                <i class="fa fa-globe"></i>
+            </div>
+        </div>
+        <div class="body">
+            <div class="box home-box active">
+                <div class="slide-pic flex a-center">
+                    <div class="first"></div>
+                    <div class="img flex j-center a-center">
+                        <img src="{% static 'img/photo1.jpg' %}" alt="" class="load-img" onload="loadImg(this)">
+                    </div>
+                    <div class="img flex j-center a-center">
+                        <img src="{% static 'img/photo2.jpg' %}" alt="">
+                    </div>
+                    <div class="img flex j-center a-center">
+                        <img src="{% static 'img/photo3.png' %}" alt="">
+                    </div>
+                    <div class="img flex j-center a-center">
+                        <img src="{% static 'img/photo4.jpg' %}" alt="">
+                    </div>
+                    <div class="img flex j-center a-center">
+                        <img src="{% static 'img/photo5.jpg' %}" alt="">
+                    </div>
+                </div>
+                
+                <div class="btn-download-apk apk method depot n-btn flex a-center j-center">
+                    <div class="icon flex a-center j-center">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="text">
+                        <p>Download APK</p>
+                        <h5>Download APK to navigate easily and faster</h5>
+                        <a href="{{ apk.file.url }}"></a>
+                    </div>
+                    <div class="icon flex a-center j-center">
+                        <i class="fa fa-download"></i>
+                    </div>
+                </div>
+                
+                <div class="rule-and-company flex n-btn j-space a-center">
+                    <div class="btn-open-rule rule flex a-center j-center">
+                        <i class="fa fa-chart-bar"></i>
+                        <p class="title-rule">Rule</p>
+                    </div>
+                    <div class="btn-open-company company n-btn flex a-center j-center">
+                        <i class="fa fa-box"></i>
+                        <p class="title-company">Company</p>
+                    </div>
+                </div>
+                
+                <div class="btn-open-recharge method depot n-btn flex a-center j-center">
+                    <div class="icon flex a-center j-center">
+                        <i class="fa fa-money-bill-alt"></i>
+                    </div>
+                    <div class="text">
+                        <p>Recharge</p>
+                    </div>
+                    <div class="icon flex a-center j-center">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="btn-open-withdraw method depot n-btn flex a-center j-center">
+                    <div class="icon flex a-center j-center">
+                        <i class="fa fa-wallet"></i>
+                    </div>
+                    <div class="text">
+                        <p>Withdraw</p>
+                    </div>
+                    <div class="icon flex a-center j-center">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <h2 class="title-ness title-business-hall">Business hall</h2>
+                <div class="all-vip">
+                    {% for vip in vips %}
+                    {% if vip.level == request.user.secondinfo.vip %}
+                    <div class="vip-hall flex a-center j-space vip{{ vip.level }} n-btn can-do">
+                        <span>
+                            <p>Vip{{ vip.level }}</p>
+                        </span>
+                        <div class="pic flex j-center a-center">
+                            <img src="{% static 'img/vip.jpg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p>- VIP{{ vip.level }}</p>
+                            <p class="title-unlocked">This vip is unlocked</p>
+                            <p class="vip-locked">You can do the task in it.</p>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="n-btn vip-hall flex a-center j-space vip{{ vip.level }}">
+                        <span>
+                            <p>Vip{{ vip.level }}</p>
+                        </span>
+                        <div class="pic flex j-center a-center">
+                            <img src="{% static 'img/vip.jpg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p>- VIP{{ vip.level }}</p>
+                            <p class="title-locked">This vip is locked</p>
+                            <p class="vip-unlocked">Click to unlock this VIP >></p>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    
+                </div>
+                <h2 class="title-ness title-com-notif">All withdrawal histories. </h2>
+                <div class="all-com">
+                    {% if users_trans.count == 0 %}
+                    <h6>No withdrawal</h6>
+                    {% else %}
+                    {% for t in users_trans %}
+                    <div class="each flex a-center j-space">
+                        <div class="number flex a-center j-center">
+                            <p>{{ t.pk }}</p>
+                        </div>
+                        <div class="photo">
+                            <img src="{% static 'img/vip.jpg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p class="congrat">Congratulation</p>
+                            <p class="email">{{ t.user.secondinfo.get_hidden_email }}</p>
+                            <p class="his-vip">VIP{{ t.user.vip }}</p>
+                        </div>
+                        <div class="amount flex a-center j-center">
+                            <p>${{ t.value }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                </div>
+                <span class="end"></span>
+            </div>
+            <div class="box team-box deactive">
+                <div class="ref">
+                    <h4 class="ref-code">Referral code</h4>
+                    <div class="copy-ref my-code flex a-center j-space">
+                        <div class="data">
+                            <p>{{ request.user.secondinfo.invite_code }}</p>
+                        </div>
+                        <div class="btn-copy-ref copy-it flex j-center n-btn">
+                            <i class="fa fa-fingerprint"></i>
+                        </div>
+                    </div>
+                    <h4 class="ref-link">Referral link</h4>
+                    <div class="copy-ref my-link flex a-center j-space">
+                        <div class="data">
+                            <a href="{% url 'app:reg' request.user.secondinfo.link %}">https://nike-mall.com/{{ request.user.secondinfo.link }}/</a>
+                        </div>
+                        <div class="btn-copy-link copy-it flex j-center n-btn">
+                            <i class="fa fa-paperclip"></i>
+                        </div>
+                    </div>
+                </div>
+                 <div class="my-data">
+                    <div class="first-data flex j-space a-center">
+                        <div class="each-data">
+                            <p class="value">{{ team_size }}</p>
+                            <p class="title title-team-size">Team size</p>
+                        </div>
+                        <div class="each-data">
+                            <p class="value">${{ request.user.secondinfo.team_recharge }}</p>
+                            <p class="title title-team-recharge">Team recharge</p>
+                        </div>
+                        <div class="each-data">
+                            <p class="value">${{ request.user.secondinfo.team_withdraw }}</p>
+                            <p class="title title-team-withdraw">Team withdraw</p>
+                        </div>
+                    </div>
+                    <div class="second-data flex j-space a-center">
+                        <div class="each-data">
+                            <p class="value">0</p>
+                            <p class="title title-new-team">New team</p>
+                        </div>
+                        <div class="each-data">
+                            <p class="value">0</p>
+                            <p class="title title-number-of-first-recharge">Number of first recharge</p>
+                        </div>
+                        <div class="each-data">
+                            <p class="value">0</p>
+                            <p class="title title-number-of-first-withdraw">Number of first withdraw</p>
+                        </div>
+                    </div>
+                </div>
+                
+                  <div class="team-a team-detail">
+                    <h3>Team A</h3>
+                    <div class="block flex a-center j-space">
+                        <div class="one flex a-center">
+                            <i class="far fa-user"></i>
+                            <p class="team-size title-team-size">Team size: </p>
+                            <p class="val">{{ request.user.secondinfo.team_a.count }}</p>
+                        </div>
+                        <div class="two flex a-center">
+                            <i class="far fa-money-bill-alt"></i>
+                            <p class="team-size team-ben">Team benefits: </p>
+                            <p class="val">${{ team_a_benef }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-b team-detail">
+                    <h3>Team B</h3>
+                    <div class="block flex a-center j-space">
+                        <div class="one flex a-center">
+                            <i class="far fa-user"></i>
+                            <p class="team-size title-team-size">Team size: </p>
+                            <p class="val">{{ request.user.secondinfo.team_b.count }}</p>
+                        </div>
+                        <div class="two flex a-center">
+                            <i class="far fa-money-bill-alt"></i>
+                            <p class="team-size team-ben">Team benefits: </p>
+                            <p class="val">${{ team_b_benef }}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-c team-detail">
+                    <h3>Team C</h3>
+                    <div class="block flex a-center j-space">
+                        <div class="one flex a-center">
+                            <i class="far fa-user"></i>
+                            <p class="team-size title-team-size">Team size: </p>
+                            <p class="val">{{ request.user.secondinfo.team_c.count }}</p>
+                        </div>
+                        <div class="two flex a-center">
+                            <i class="far fa-money-bill-alt"></i>
+                            <p class="team-size team-ben">Team benefits: </p>
+                            <p class="val">${{ team_c_benef }}</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="end"></span>
+            </div>
+            <div class="box me-box deactive">
+                <div class="profile flex a-center j-space">
+                    <div class="icon flex a-center j-center">
+                        <i class="far fa-user"></i>
+                    </div>
+                    <div class="data">
+                        <p class="email">{{ request.user.email }}</p>
+                        <p class="invite-code" inv="{{ request.user.secondinfo.invite_code }}">Invitation code: {{ request.user.secondinfo.invite_code }}</p>
+                        <p class="vip-level">VIP{{ request.user.secondinfo.vip }}</p>
+                    </div>
+                    <div class="icon-see">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="total-amount">
+                    <h3>Total earning</h3>
+                    <p class="my-amount">${{ request.user.secondinfo.total_earn }}</p>
+                    
+                    <div class="yesterday flex a-center j-space">
+                        <p>Yesterday earning: </p>
+                        <p>${{ earn_yesterday }}</p>
+                    </div>
+                    <div class="bal flex a-center j-space">
+                        <p>Balance: </p>
+                        <p>${{ request.user.secondinfo.balance }}</p>
+                    </div>
+                </div>
+                
+                <h4 class="earn">Earning</h4>
+                <div class="my-bal">
+                    <div class="bal-one flex a-center j-space">
+                        <div class="each flex a-center j-center">
+                            <p>${{ task_today.earn_today }}</p>
+                            <p class="today">Today</p>
+                        </div>
+                        <div class="each flex a-center j-center">
+                            <p>${{ earn_yesterday }}</p>
+                            <p class="yesterday-text">Yesterday</p>
+                        </div>
+                        <div class="each flex a-center j-center">
+                            <p>${{ this_month }}</p>
+                            <p class="this-month">This month</p>
+                        </div>
+                    </div>
+                    <div class="bal-one flex a-center j-space">
+                        <div class="each flex a-center j-center">
+                            <p>${{ last_month }}</p>
+                            <p class="last-month">Last month</p>
+                        </div>
+                        <div class="each flex a-center j-center">
+                            <p>${{ request.user.secondinfo.total_earn }}</p>
+                            <p class="total">Total</p>
+                        </div>
+                        <div class="each flex a-center j-center">
+                            <p>{{ request.user.secondinfo.mission_completed }}</p>
+                            <p class="mission-completed">Mission completed</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="btn-open-withdraw btn-op flex a-center j-center n-btn">
+                    <div class="ic flex a-center j-center">
+                        <i class="fa fa-wallet"></i>
+                    </div>
+                    <div class="text">
+                        <p>Withdraw</p>
+                    </div>
+                    <div class="ic flex a-center j-center">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="btn-open-recharge btn-op flex a-center j-center n-btn">
+                    <div class="ic flex a-center j-center">
+                        <i class="fa fa-money-bill-alt"></i>
+                    </div>
+                    <div class="text">
+                        <p>Recharge</p>
+                    </div>
+                    <div class="ic flex a-center j-center">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                 <div class="btn-open-withdraw-method btn-op flex a-center j-center n-btn">
+                    <div class="ic flex a-center j-center">
+                        <i class="fa fa-rocket"></i>
+                    </div>
+                    <div class="text">
+                        <p>Withdraw method</p>
+                    </div>
+                    <div class="ic flex a-center j-center">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                
+                <div class="btn-open-transaction-detail btn-op flex a-center j-center n-btn">
+                    <div class="ic flex a-center j-center">
+                        <i class="fa fa-bars"></i>
+                    </div>
+                    <div class="text">
+                        <p>Transaction detail</p>
+                    </div>
+                    <div class="ic flex a-center j-center">
+                        <i class="fa fa-chevron-right"></i>
+                    </div>
+                </div>
+                <br>
+                <div class="last-op flex btn-change-pass j-center a-center n-btn">
+                    <a href="{% url 'app:change_my_password' %}">Change my password</a>
+                </div>
+                <div class="last-op btn-change-trans-pass flex j-center a-center n-btn">
+                    <a href="{% url 'app:change_transaction_password' %}">Change my transaction password</a>
+                </div>
+                <div class="last-op logout flex j-center a-center n-btn">
+                    <a href="{% url 'app:logout_view' %}">Logout</a>
+                </div>
+                <span class="end"></span>
+            </div>
+            <div class="box task-box deactive">
+                <div class="task-detail flex j-space a-center">
+                    <div class="detail flex j-space a-center">
+                        <div class="my-number-task flex j-center a-center">
+                            <p>{{ request.user.secondinfo.daily_task }}</p>
+                            <p>Total Task</p>
+                        </div>
+                        <div class="count flex j-center a-center">
+                            <p>{{ task_today.task_done }}</p>
+                            <p>Task done</p>
+                        </div>
+                        <div class="win-per-order j-center flex a-center">
+                            <p class="" money="{{ request.user.secondinfo.per_order }}">${{ request.user.secondinfo.per_order }}</p>
+                            <p>Per order</p>
+                        </div>
+                    </div>
+                    <div class="total-earn-today flex j-center a-center">
+                        <p money="0.0">${{ task_today.earn_today }}</p>
+                        <p>Total earn today</p>
+                    </div>
+                </div>
+                <h3>All Task availables</h3>
+                <div class="tasks">
+                    <div class="each-task">
+                        <div class="image flex a-center j-center">
+                            <img src="{% static 'img/img01.jpg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p class="name">Nike Baby (12–24M) Crew and Trousers Set</p>
+                            <p class="vip">- VIP{{ request.user.secondinfo.vip }}</p>
+                            <div class="amount flex">
+                                <div>
+                                    <p>$39.00</p>
+                                </div>
+                                <div>
+                                    <p>${{ request.user.secondinfo.vip }}</p>
+                                </div>
+                            </div>
+                            <div class="btn-do-task flex j-center n-btn a-center" id="task-1">
+                                <p>Do this task</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="each-task">
+                        <div class="image flex a-center j-center">
+                            <img src="{% static 'img/img02.jpg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p class="name">Nike Court Borough Mid 2 Older Kids' Shoes (White)</p>
+                            <p class="vip">- VIP{{ request.user.secondinfo.vip }}</p>
+                            <div class="amount flex">
+                                <div>
+                                    <p>$69.99</p>
+                                </div>
+                                <div>
+                                    <p>${{ request.user.secondinfo.vip }}</p>
+                                </div>
+                            </div>
+                            <div class="btn-do-task flex j-center n-btn a-center" id="task-2">
+                                <p>Do this task</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="each-task">
+                        <div class="image flex a-center j-center">
+                            <img src="{% static 'img/img03.jpeg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p class="name">Nike Sportswear Tech Fleece Older Kids' (Boys') Trousers</p>
+                            <p class="vip">- VIP{{ request.user.secondinfo.vip }}</p>
+                            <div class="amount flex">
+                                <div>
+                                    <p>$79.99</p>
+                                </div>
+                                <div>
+                                    <p>${{ request.user.secondinfo.vip }}</p>
+                                </div>
+                            </div>
+                            <div class="btn-do-task flex j-center n-btn a-center" id="task-3">
+                                <p>Do this task</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="each-task">
+                        <div class="image flex a-center j-center">
+                            <img src="{% static 'img/img04.jpeg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p class="name">Nike Kawa Younger and Older Kids' Slide</p>
+                            <p class="vip">- VIP{{ request.user.secondinfo.vip }}</p>
+                            <div class="amount flex">
+                                <div>
+                                    <p>$29.99</p>
+                                </div>
+                                <div>
+                                    <p>${{ request.user.secondinfo.vip }}</p>
+                                </div>
+                            </div>
+                            <div class="btn-do-task flex j-center a-center n-btn" id="task-4">
+                                <p>Do this task</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="each-task">
+                        <div class="image flex a-center j-center">
+                            <img src="{% static 'img/img05.jpg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p class="name">Nike Heritage Cross-Body Bag (Small, 1L)</p>
+                            <p class="vip">- VIP{{ request.user.secondinfo.vip }}</p>
+                            <div class="amount flex">
+                                <div>
+                                    <p>$22.99</p>
+                                </div>
+                                <div>
+                                    <p>${{ request.user.secondinfo.vip }}</p>
+                                </div>
+                            </div>
+                            <div class="btn-do-task flex j-center a-center n-btn" id="task-5">
+                                <p>Do this task</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="each-task">
+                        <div class="image flex a-center j-center">
+                            <img src="{% static 'img/img06.jpeg' %}" alt="">
+                        </div>
+                        <div class="data">
+                            <p class="name">Nike Everyday Cushioned Training Ankle Socks (White)</p>
+                            <p class="vip">- VIP{{ request.user.secondinfo.vip }}</p>
+                            <div class="amount flex">
+                                <div>
+                                    <p>$23.00</p>
+                                </div>
+                                <div>
+                                    <p>${{ request.user.secondinfo.vip }}</p>
+                                </div>
+                            </div>
+                            <div class="btn-do-task n-btn flex j-center a-center" id="task-6">
+                                <p>Do this task</p>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="end"></span>
+                </div>
+            </div>
+            
+            <div class="box vip-box deactive">
+                <h3>All VIP availables</h3>
+                {% for v in vips %}
+                {% if v.level == request.user.secondinfo.vip %}
+                <div class="each-vip n-btn flex j-space a-center" vip="{{ v.level }}" unlocked="true">
+                    <div class="title flex j-center a-center">
+                        <div class="data flex j-center a-center">
+                            <p>VIP{{ v.level }}</p>
+                        </div>
+                    </div>
+                    <div class="lock-or-unlock flex j-center a-center">
+                        <i class="fa fa-unlock"></i>
+                    </div>
+                    <div class="join-vip flex j-center a-center">
+                        <div class="">
+                            <p class="already-joined" id="{{ v.level }}">This VIP is unlocked</p>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="{% static 'img/vip.jpg' %}" alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="one flex a-center j-space">
+                            <div class="each flex j-center a-center">
+                                <p>{{ v.daily_task }}</p>
+                                <p>Daily task</p>
+                            </div>
+                            <div class="each flex j-center a-center">
+                                <p>${{ v.per_order }}</p>
+                                <p>Per order</p>
+                            </div>
+                        </div>
+                        <div class="one flex a-center j-space">
+                            <div class="each flex j-center a-center">
+                                <p>${{ v.daily_earning }}</p>
+                                <p>Daily earning</p>
+                            </div>
+                            <div class="each flex j-center a-center">
+                                <p>${{ v.monthly_earning }}</p>
+                                <p>Monthly earning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+              
+                <div class="each-vip flex j-space a-center n-btn" vip="{{ v.level }}" unlocked="false">
+                    <div class="title flex j-center a-center">
+                        <div class="data flex j-center a-center">
+                            <p>VIP{{ v.level }}</p>
+                        </div>
+                    </div>
+                    <div class="lock-or-unlock flex j-center a-center">
+                        <i class="fa fa-lock"></i>
+                    </div>
+                    <div class="join-vip flex j-center a-center">
+                        <div class="">
+                            <p class="to-join" id="{{ v.level }}">Click to join VIP{{ v.level }} >></p>
+                        </div>
+                    </div>
+                    <div class="photo">
+                        <img src="{% static 'img/vip.jpg' %}" alt="">
+                    </div>
+                    <div class="detail">
+                        <div class="one flex a-center j-space">
+                            <div class="each flex j-center a-center">
+                                <p>{{ v.daily_task }}</p>
+                                <p>Daily task</p>
+                            </div>
+                            <div class="each flex j-center a-center">
+                                <p>${{ v.per_order }}</p>
+                                <p>Per order</p>
+                            </div>
+                        </div>
+                        <div class="one flex a-center j-space">
+                            <div class="each flex j-center a-center">
+                                <p>${{ v.daily_earning }}</p>
+                                <p>Daily earning</p>
+                            </div>
+                            <div class="each flex j-center a-center">
+                                <p>${{ v.monthly_earning }}</p>
+                                <p>Monthly earning</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+                <span class="end"></span>
+            </div>
+        </div>
+        <div class="nav flex a-center j-space">
+            <div class="each btn-home flex a-center j-center n-btn">
+                <i class="fa fa-home active"></i>
+                <p class="active">Home</p>
+            </div>
+            <div class="each btn-task flex a-center j-center n-btn">
+                <i class="fa fa-flag"></i>
+                <p>Task</p>
+            </div>
+            <div class="each btn-team flex a-center j-center n-btn">
+                <i class="far fa-heart"></i>
+                <p>Team</p>
+            </div>
+            <div class="each btn-vip flex a-center j-center n-btn">
+                <i class="far fa-gem"></i>
+                <p>VIP</p>
+            </div>
+            <div class="each btn-me flex a-center j-center n-btn">
+                <i class="far fa-user"></i>
+                <p>Me</p>
+            </div>
+        </div>
+        </div>
+        </div>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script src="{% static 'js/main.js' %}" type="text/javascript" charset="utf-8"></script>
+    </body>
+</html>

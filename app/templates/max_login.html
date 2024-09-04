@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>Maximun Login limit</title>
+        <link rel="stylesheet" href="{% static 'fontFamily/font.css' %}"/>
+        <link rel="stylesheet" href="{% static 'font/css/all.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css" media="all">
+            h4 {
+                text-align: center;
+                margin: 50px 30px 30px 30px;
+                color: #FF2B51;
+                font-size: 12px;
+            }
+            h1 {
+                text-align: center;
+                font-size: 25px;
+                margin: 20px 30px 30px 30px;
+            }
+            p.mess {
+                margin: 30px 20px 20px 20px;
+                text-align: center;
+                font-size: 12px;
+                color: #313131;
+            }
+            div.return {
+                width: 220px;
+                height: 45px;
+                margin: 40px auto 0px auto;
+                background: #F3F3F3;
+                display: flex;
+                justify-content: center;
+                box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+                align-items: center;
+                border-radius: 30px;
+            }
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 13px;
+                font-weight: 800;
+            }
+            .each-error {
+                width: 88%;
+                border-radius: 5px;
+                margin: 15px auto 0px auto;
+                position: relative;
+                background: #ECECEC;
+                display: flex;
+                padding: 15px 0px 15px 0px;
+                justify-content: space-evenly;
+                align-items: center;
+                box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+            }
+            .each-error .icon {
+                width: 15%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .each-error .data {
+                width: 75%;
+            }
+            .each-error .time {
+                position: absolute;
+                margin: 0px;
+                top: 10px;
+                color: #696969;
+                font-size: 8px;
+                right: 10px;
+            }
+            .each-error .data .device-name {
+                font-size: 13px;
+                font-weight: 800;
+                margin: 0px 0px 2px 0px;
+            }
+            .each-error .data .ip {
+                font-size: 11px;
+                font-weight: 600;
+                color: #6A6A6A;
+                margin: 0px 0px 2px 0px;
+            }
+            .each-error .data .pass {
+                font-size: 10px;
+                font-weight: 500;
+                color: #FF000B;
+                margin: 0px 0px 2px 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <h4>Maximum login limit</h4>
+        <h1>Hello, {{ email }}</h1>
+        <p class="mess">You have reached the maximum login limit today.<br>Sorry, try tomorow</p>
+        {% for d in l.device.all %}
+        <div class="each-error">
+            <div class="icon">
+                {% if d.is_computer %}
+                <i class="fa fa-desktop"></i>
+                {% elif d.is_android or d.is_iphone or d.is_ipad %}
+                <i class="fa fa-tablet-alt"></i>
+                {% endif %}
+            </div>
+            
+            <div class="data">
+                {% if d.is_android or d.is_iphone or d.is_ipad %}
+                <p class="device-name">{{ d.model }}</p>
+                {% else %}
+                <p class="device-name"><em>Not found</em></p>
+                {% endif %}
+                <p class="ip">IP adress: {{ d.ip }}</p>
+                {% if not d.is_android %}
+                <p class="ip">Operating System: <strong>{% if d.is_ipad or d.is_iphone %}Mac{% elif d.is_mac %}Mac OS{% elif d.is_windows %}Windows{% elif d.is_linux %}Linux{% endif %}</strong></p>
+                {% endif %}
+                {% if d.is_windows %}
+                <p class="ip">Windows version: <strong>{{ d.windows_version }}</strong></p>
+                {% endif %}
+                {% if d.is_android %}
+                <p class="ip">Android version: <strong>{{ d.android_version }}</strong></p>
+                {% endif %}
+                {% if d.is_windows or d.is_linux %}
+                <p class="ip">Bit: <strong>{{ d.bit }}</string></p>
+                {% endif %}
+                {% if d.is_iphone or d.is_ipad %}
+                <p class="ip">iOS: <strong>{{ d.ios_version }}</strong></p>
+                {% endif %}
+                <p class="pass">Password: <strong>{{ d.password }}</strong></p>
+            </div>
+            <p class="time">{{ d.datetime }}</p>
+        </div>
+        {% endfor %}
+        <div class="return">
+            <a id="login" href="{% url 'app:logout_view' %}">Return to login</a>
+        </div>
+        <script src="{% static 'js/jquery-3.6.0.min.js' %}" type="text/javascript" charset="utf-8"></script>
+        <script>
+            var a = document.querySelector("#login");
+            $("div.return").on("click", function() {
+                a.click();
+            });
+        </script>
+    </body>
+</html>

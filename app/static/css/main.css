@@ -1,0 +1,1890 @@
+.nav {
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    bottom: 0px;
+    z-index: 3;
+    background: linear-gradient(to right, #00FFE7, #00FCFF, #00ADFF, #006CFF);
+}
+.no-trans {
+    color: #6F6F6F;
+    text-align: center;
+    margin: 50px 20px 0px 20px;
+    font-size: 10px;
+}
+.all-com h6 {
+    margin: 50px 30px 50px 30px;
+    font-weight: 800;
+    color: #5C5C5C;
+    text-align: center;
+}
+.body-company .contact {
+    margin: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: italic;
+    color: #727272;
+}
+.page-loading {
+    background: #171717;
+    position: fixed;
+    z-index: 100;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+}
+.page-loading .main-it {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.logo-anim {
+    width: 100px;
+    height: 100px;
+    border-radius: 35px;
+    background: #333333;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.blur-every {
+    position: fixed;
+    z-index: 98;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+    backdrop-filter: blur(7px);
+    bottom: 0px;
+}
+
+.blur-every.to-5 {
+    backdrop-filter: blur(5px);
+}
+.blur-every.to-3 {
+    backdrop-filter: blur(3px);
+}
+.blur-every.to-1 {
+    backdrop-filter: blur(1px);
+}
+.blur-every.to-0 {
+    backdrop-filter: blur(0px);
+}
+
+.logo-anim::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    background-image: linear-gradient(to right, transparent, #727272, transparent);
+    animation: shimmerLogo 1.2s linear infinite;
+    content: "";
+    background-size: 450px 400px;
+    background-repeat: no-repeat;
+}
+@keyframes shimmerLogo {
+    0% {
+        background-position: -450px 0;
+    }
+    100% {
+        background-position: 450px 0;
+    }
+}
+
+.main-it .pp {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+}
+.main-it .pp h1 {
+    font-size: 14px;
+    font-weight: 800;
+    margin: 0px 0px 5px 0px;
+    text-align: center;
+}
+
+.main-it .pp p {
+    font-size: 10px;
+    font-weight: 800;
+    margin: 0px 0px 5px 0px;
+    color: #979797;
+    text-align: center;
+}
+
+.logo-anim img {
+    width: 70%;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.body-transaction-detail h3,
+.body-withdraw-method h3 {
+    margin: 80px 20px 10px 20px;
+}
+.update-vip-form span.error-rech {
+    color: red;
+    margin: 5px 0px 0px 0px;
+    font-size: 11px;
+    font-weight: 800;
+    display: none;
+}
+.set-withdraw-method-form {
+    background: #222222;
+    border-radius: 20px;
+    padding: 20px 0px 20px 0px;
+    margin: 20px auto 20px auto;
+    width: 90%;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.set-withdraw-method-form span.error-set {
+    color: red;
+    font-size: 10px;
+    margin: 5px 0px 5px 20px;
+    display: none;
+    font-weight: 800;
+}
+
+.set-withdraw-method-form div.field {
+    width: 90%;
+    margin: 20px auto 0px auto;
+    height: 50px;
+    border-radius: 30px;
+    background: #2C2C2C;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.body-withdraw-method .with-set {
+    margin: 10px 20px 15px 20px;
+    font-size: 11px;
+    padding: 10px 0px 10px 10px;
+    border-left: 2px white solid;
+    font-weight: 800;
+}
+.body-withdraw-method .each-method-set {
+    width: 85%;
+    margin: 10px auto 10px auto;
+    padding: 15px 0px 15px 0px;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    background: linear-gradient(to left, #6700FF, #B300FF);
+}
+
+.body-withdraw-method .each-method-set p:nth-child(1) {
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    margin: 0px 0px 5px 20px;
+}
+.body-withdraw-method .each-method-set p:nth-child(2) {
+    color: #E7FFFF;
+    font-size: 12px;
+    font-weight: 800;
+    margin: 0px 0px 5px 20px;
+}
+.body-withdraw-method .each-method-set p:nth-child(3) {
+    color: #DDDDDD;
+    font-size: 10px;
+    margin: 0px 0px 0px 20px;
+}
+
+.btn-submit-set-withdraw-method {
+    width: 80%;
+    margin: 20px auto 10px auto;
+    background: linear-gradient(to right, #008CFF, #0066FF);
+    height: 45px;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.btn-submit-set-withdraw-method button {
+    font-size: 12px;
+    font-weight: 800;
+    color: white;
+}
+.set-withdraw-method-form h4 {
+    margin: 5px 0px 0px 0px;
+    text-align: center;
+}
+.set-withdraw-method-form p {
+    text-align: center;
+    font-size: 11px;
+    margin: 10px 20px 10px 20px;
+}
+
+.set-withdraw-method-form div.field .icon {
+    width: 10%;
+}
+.set-withdraw-method-form div.field .icon i {
+    color: white;
+}
+.set-withdraw-method-form div.field .text {
+    width: 80%;
+}
+.set-withdraw-method-form div.field .text input {
+    width: 100%;
+    font-size: 13px;
+    font-weight: 800;
+}
+.set-withdraw-method-form div.field .text select {
+    width: 100%;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.body-transaction-detail .each-trans {
+    width: 85%;
+    position: relative;
+    margin: 0px auto 20px auto;
+    border-radius: 3px;
+    padding: 20px 15px 20px 15px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    background: #2A2A2A;
+}
+
+.body-transaction-detail .each-trans .method-title {
+    margin: 0px 10px 10px 0px;
+    font-size: 12px;
+    color: #ACACAC;
+    font-weight: 800;
+}
+.block-recharge {
+    position: absolute;
+    height: 90%;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    z-index: 15;
+    background: #272727;
+    transition: all 0.4s;
+    overflow: hidden;
+}
+.block-recharge.show {
+    top: 10%;
+}
+.block-recharge.hide {
+    top: 100%;
+}
+
+
+.block-recharge .main-block-recharge {
+    position: relative;
+    width: 100%;
+    overflow: auto;
+    height: 100%;
+}
+.main-block-recharge span.style {
+    position: absolute;
+    top: 5px;
+    width: 20%;
+    left: 40%;
+    background: #9F9F9F;
+    border-radius: 10px;
+    height: 5px;
+}
+.main-block-recharge h3 {
+    margin: 20px 10px 5px 15px; 
+}
+.main-block-recharge .l-des {
+    font-size: 12px;
+    margin: 0px 10px 5px 15px; 
+}
+.main-block-recharge form {
+    width: 85%;
+    margin: 30px auto 20px auto;
+}
+.main-block-recharge form .each-field {
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    height: 50px;
+    background: #242424;
+}
+.main-block-recharge form .btn-submit-form-reg {
+    width: 90%;
+    margin: 30px auto 0px auto;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    height: 45px;
+    background: linear-gradient(to right, #00AFFF, #0064FF);
+}
+.main-block-recharge form .btn-submit-form-reg button {
+    color: white;
+    font-weight: 800;
+}
+.main-block-recharge form .each-field div {
+    width: 13%;
+}
+.main-block-recharge form .each-field div i {
+    color: white;
+}
+.main-block-recharge form .each-field input {
+    width: 80%;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.black-recharge {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    display: none;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 14;
+}
+
+.body-transaction-detail .each-trans .amount {
+    margin: 0px 10px 10px 0px;
+    font-weight: 800;
+    font-size: 25px;
+}
+.body-transaction-detail .each-trans .datetime {
+    font-size: 8px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: #949494;
+}
+
+.body-transaction-detail .each-trans .valid-datetime {
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 11px;
+}
+.body-transaction-detail .each-trans .with-method {
+    margin-bottom: 5px;
+    margin-top: 0px;
+    font-size: 11px;
+}
+.body-transaction-detail .each-trans .is-valid {
+    margin-bottom: 5px;
+    font-size: 11px;
+    margin-top: 0px;
+}
+.body-transaction-detail .each-trans .vip-demande {
+    margin-bottom: 5px;
+    font-size: 11px;
+    margin-top: 0px;
+}
+.body-transaction-detail .each-trans .email,
+.body-transaction-detail .each-trans .username,
+.body-transaction-detail .each-trans .trans-datetime {
+    margin-bottom: 5px;
+    font-size: 11px;
+    margin-top: 0px;
+}
+.body-transaction-detail .each-trans .is-valid strong.valid {
+    color: #00FF63;
+}
+.body-transaction-detail .each-trans .is-valid strong.error {
+    color: #FF0017;
+}
+.body-transaction-detail .each-trans .is-valid strong.cours {
+    color: #434343;
+}
+
+.body-transaction-detail .each-trans .icon {
+    position: absolute;
+    top: 10px;
+    width: 90px;
+    right: 10px;
+}
+.body-transaction-detail .each-trans .icon div {
+    width: 25px;
+    height: 25px;
+    border: 2px solid white;
+    border-radius: 100%;
+}
+.body-transaction-detail .each-trans .icon div i {
+    font-size: 12px;
+    color: white;
+}
+.body-transaction-detail .each-trans .icon div i.valid {
+    color: #00FF63;
+}
+.body-transaction-detail .each-trans .icon div i.error {
+    color: #FF0017;
+}
+
+.vip-hall .pic {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+.vip-hall .data {
+    width: 200px;
+}
+.vip-hall .data p:nth-child(1) {
+    margin: 0px;
+    color: white;
+    font-size: 20px;
+}
+.vip-hall .data p:nth-child(2) {
+    margin: 5px 0px 5px 0px;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+}
+.vip-hall .data p:nth-child(3) {
+    margin: 0px;
+    color: #EFEFEF;
+    font-size: 10px;
+}
+.vip-hall .pic img {
+    width: 100%;
+}
+.nav .each {
+    width: 16%;
+    height: 40px;
+    flex-direction: column;
+}
+.nav .each p {
+    font-weight: bold;
+    font-size: 10px;
+    color: #171717;
+    margin: 6px 0px 0px 0px;
+}
+.nav .each i {
+    colot: #171717;
+}
+.nav .each p.active {
+    color: white;
+}
+.nav .each i.active {
+    color: white;
+}
+.header, .header-with {
+    width: 80%;
+    height: 45px;
+    position: absolute;
+    top: 10px;
+    left: 10%;
+    z-index: 3;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    background: linear-gradient(to right, #00FCFF, #00ADFF, #006CFF);
+    border-radius: 30px;
+}
+.rule-box .main-rule .header-with {
+    background: linear-gradient(to right, #7D7D7D, #474747);
+    border-radius: 30px;
+}
+.company-box .main-company .header-with {
+    background: linear-gradient(to right, #9B00FF, #6E35FF);
+    border-radius: 30px;
+}
+.withdraw-box .main-withdraw .header-with {
+    background: linear-gradient(to right, #00306B, #000F34);
+    border-radius: 30px;
+}
+.recharge-box .main-recharge  .header-with {
+    background: linear-gradient(to right, #141414, #4E1767);
+    border-radius: 30px;
+}
+.header .logo,
+.header-with .logo-with {
+    width: 15%;
+}
+.header-with .logo-with i {
+    color: white;
+}
+.header .logo i {
+    display: none;
+    color: white;
+}
+.header .logo img {
+    width: 90%;
+}
+.header .text,
+.header-with .text-with {
+    width: 70%;
+}
+.header .lang,
+.header-with .close-with,
+.header-with .close-recharge,
+.header-with .close-rule,
+.header-with .close-company,
+.header-with .close-withdraw-method,
+.header-with .close-transaction-detail,
+.header-with .close-language {
+    width: 15%;
+}
+.header .lang i,
+.header-with .close-with i,
+.header-with .close-recharge i,
+.header-with .close-rule i,
+.header-with .close-transaction-detail i,
+.header-with .close-company i,
+.header-with .close-withdraw-method i,
+.header-with .close-language i {
+    color: white;
+}
+.header .text h1,
+.header-with .text-with h1 {
+    font-size: 13px;
+    margin: 0px;
+    color: white;
+}
+
+.body .box {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background: #171717;
+    height: 100%;
+    bottom: 0px;
+    overflow: auto;
+}
+.box.active {
+    z-index: 2;
+}
+.box.deactive {
+    z-index: 1;
+}
+
+.method {
+    width: 90%;
+    height: 50px;
+    border-radius: 30px;
+    margin: 10px auto 10px auto;
+    background: #353535;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+
+.method .icon i {
+    color: #00B5FF;
+}
+.method.apk {
+    background: #242424;
+}
+.method.apk .icon i {
+    color: #00FF80;
+}
+
+.method .icon {
+    width: 15%;
+}
+.method .text {
+    width: 70%;
+}
+.method .text p {
+    font-size: 13px;
+    margin: 0px;
+    color: white;
+}
+.method.apk .text h5 {
+    font-size: 8px;
+    margin: 0px;
+    color: #E4E4E4;
+}
+.method .text a {
+    width: 0px;
+    margin: 0px;
+    height: 0px;
+}
+.rule-and-company {
+    width: 90%;
+    margin: 20px auto 20px auto;
+}
+.rule-and-company .rule,
+.rule-and-company .company {
+    width: 120px;
+    height: 120px;
+    background: #2A2A2A;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    flex-direction: column;
+    border-radius: 25px;
+}
+.rule-and-company .rule i {
+    font-size: 20px;
+    color: #00FF96;
+}
+.rule-and-company .company i{
+    font-size: 20px;
+    color: #00FFE0;
+}
+.rule-and-company .rule p {
+    color: #00FF96;
+    font-size: 13px;
+}
+.rule-and-company .company p {
+    color: #00FFE0;
+    font-size: 13px;
+}
+.slide-pic {
+    margin: 70px auto 20px auto;
+    width: 370px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.slide-pic .img {
+    width: 370px;
+}
+.slide-pic .img img {
+    width: 370px;
+}
+.title-ness {
+    margin-left: 10px;
+}
+.first {
+    width: 0px;
+    transition: all 0.7s;
+}
+.vip-hall {
+    margin: 10px auto 10px auto;
+    width: 90%;
+    background: linear-gradient(to right, #00FFE7, #00FCFF, #00ADFF, #006CFF);;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    position: relative;
+    height: 100px;
+}
+
+span.end {
+    width: 20%;
+    height: 5px;
+    background: black;
+    border-radius: 10px;
+    display: block;
+    margin: 50px auto 50px auto;
+}
+
+.vip-hall span {
+    position: absolute;
+    top: 8px;
+    border-radius: 20px;
+    right: 8px;
+    background: #00FCFF;
+}
+.vip-hall span p {
+    margin: 7px 15px 7px 15px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.all-com .each {
+    border-bottom: 1px black solid;
+    padding-bottom: 5px;
+    width: 95%;
+    margin: 10px auto 10px auto;
+}
+.all-com .each .number {
+    width: 10%;
+}
+.all-com .each .number p {
+    font-size: 12px;
+    font-weight: bold;
+}
+.all-com .each .amount p {
+    font-size: 13px;
+    font-weight: 800;
+}
+.all-com .each .photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.all-com .each .photo img {
+    width: 100%;
+}
+.all-com .each .data {
+    width: 45%;
+}
+.all-com .each .amount {
+    width: 20%;
+}
+.all-com .each .data .congrat {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.all-com .each .data .email {
+    font-size: 10px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.all-com .each .data .his-vip {
+    font-size: 9px;
+    color: #717171;
+    margin-top: 5px;
+}
+
+.main-street {
+    width: 440px;
+    bottom: 10px;
+    position: fixed;
+    top: 10px;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.4s;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.main-street.to-left {
+    transition: all 0.4s;
+    left: 20px;
+}
+
+.under-main {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.under-main .body .home-box::-webkit-scrollbar {
+    width: 0px;
+}
+.under-main .body .vip-box::-webkit-scrollbar {
+    width: 0px;
+}
+.under-main .body .task-box::-webkit-scrollbar {
+    width: 0px;
+}
+.under-main .body .me-box::-webkit-scrollbar {
+    width: 0px;
+}
+.under-main .body .team-box::-webkit-scrollbar {
+    width: 0px;
+}
+
+.remove-scrollBar::-webkit-scrollbar {
+    width: 0px;
+}
+.body-language .tt {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 800;
+    margin: 80px 20px 20px 20px;
+}
+
+.black-computer {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    display: none;
+    bottom: 0px;
+    z-index: 6;
+    background: rgba(0,0,0,0.6);
+}
+.me-box .profile {
+    margin: 60px auto 10px auto;
+    width: 90%;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+.me-box .profile .icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background: #404040;
+}
+.me-box .profile .icon i {
+    font-size: 20px;
+    color: white;
+}
+.me-box .profile .data {
+    width: 70%;
+}
+.me-box .profile .data .email {
+    font-weight: 800;
+    font-size: 17px;
+    margin: 0px 0px 5px 0px;
+    color: color: #00FFA4;
+}
+.me-box .profile .data .vip-level {
+    font-weight: bold;
+    font-size: 10px;
+    margin: 0px 0px 5px 0px;
+}
+.me-box .profile .data .invite-code {
+    font-weight: bold;
+    margin: 0px 0px 5px 0px;
+    font-size: 10px;
+}
+.last-op {
+    width: 80%;
+    margin: 10px auto 10px auto;
+    background: #383838;
+    height: 45px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 30px;
+}
+.last-op a {
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.my-data {
+    width: 95%;
+    margin: 10px auto 10px auto;
+    border-radius: 10px;
+    padding: 10px 0px 10px 0px;
+    background: #1D1E1E;
+}
+.my-data .first-data .each-data,
+.my-data .second-data .each-data {
+    width: 30%;
+}
+.my-data .first-data .each-data p,
+.my-data .second-data .each-data p {
+    text-align: center;
+    color: white;
+}
+.my-data .first-data .each-data .title,
+.my-data .second-data .each-data .title {
+    font-size: 10px;
+}
+.my-data .first-data .each-data .value,
+.my-data .second-data .each-data .value {
+    font-weight: bold;
+}
+
+.team-detail .block {
+    width: 100%;
+}
+.team-detail i {
+    color: white;
+}
+.team-detail .block .one {
+    width: 40%;
+}
+.team-detail .block .two {
+    width: 50%;
+}
+.team-detail h3 {
+    width: 90%;
+    border-bottom: 1px black solid;
+    margin: 10px ;
+}
+.team-detail .block .one .team-size, 
+.team-detail .block .two .team-size {
+    margin: 0px 5px 0px 5px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.team-detail .block .one .val,
+.team-detail .block .two .val {
+    font-size: 12px;
+    margin: 0px 0px 0px 5px;
+    color: #008FFF;
+    font-weight: bold;
+}
+.team-detail {
+    width: 90%;
+    padding: 15px 0px 15px 0px;
+    border-radius: 5px;
+    background: #2F2F2F;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    margin: 15px auto 0px auto;
+}
+
+.ref {
+    width: 85%;
+    padding: 10px 0px 10px 0px;
+    margin: 70px auto 20px auto;
+    background: #353535;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.ref h4 {
+    margin: 10px 0px 5px 10px;
+}
+.ref .copy-ref {
+    width: 90%;
+}
+.ref .copy-ref .data {
+    width: 90%;
+}
+.ref .copy-ref .copy-it {
+    width: 10%;
+}
+.ref .copy-ref .copy-it i {
+    color: #00FFD0;
+}
+.ref .copy-ref .data p {
+    font-size: 20px;
+    font-weight: 800;
+    margin-left: 10px;
+}
+.ref .copy-ref .data a {
+    font-size: 12px;
+    font-weight: 800;
+    margin-left: 10px;
+    color: #0078FF;
+}
+
+.total-amount {
+    width: 90%;
+    background: #242424;
+    border-radius: 10px;
+    padding: 20px 0px 20px 0px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    margin: 30px auto 20px auto;
+}
+.total-amount h3 {
+    margin: 0px 0px 10px 10px;
+    font-size: 13px;
+}
+.total-amount .my-amount {
+    font-size: 30px;
+    margin: 5px 0px 5px 10px;
+}
+
+.total-amount .yesterday,
+.total-amount .bal {
+    width: 90%;
+    margin: 10px auto 10px auto;
+    height: 50px;
+    border-radius: 5px 15px 15px 5px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+.total-amount .yesterday {
+    background: #141414;
+}
+.total-amount .bal {
+    background: #141414;
+}
+.total-amount .yesterday p:nth-child(2), 
+.total-amount .bal p:nth-child(2) {
+    text-align: right;
+    color: white;
+    width: 20%;
+    font-weight: bold;
+    font-size: 12px;
+}
+.total-amount .yesterday p:nth-child(1), 
+.total-amount .bal p:nth-child(1) {
+    width: 70%;
+    font-size: 12px;
+    font-weight: 800;
+    color: white;
+}
+.my-bal {
+    width: 95%;
+    margin: 30px auto 30px auto;
+}
+.my-bal .bal-one {
+    width: 100%;
+    margin-top: 15px;
+}
+.my-bal .bal-one .each {
+    width: 110px;
+    flex-direction: column;
+    height: 110px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    background: #3B3B3B;
+}
+.my-bal .bal-one p:nth-child(1) {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.my-bal .bal-one p:nth-child(2) {
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.earn {
+    margin: 40px 20px 0px 20px;
+    text-align: center;
+    font-size: 30px;
+    border-bottom: 1px solid black;
+}
+
+.btn-op {
+    margin: 10px auto 5px auto;
+    width: 85%;
+    height: 50px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    background: #272727;
+    border-radius: 30px;
+}
+.btn-op .ic {
+    width: 10%;
+}
+.btn-op .ic i {
+    color: white;
+}
+.btn-op .text {
+    width: 75%;
+}
+.btn-op .text p {
+    font-size: 13px;
+}
+.each-vip {
+    position: relative;
+    width: 90%;
+    border-radius: 20px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    padding: 50px 0px 30px 0px;
+    margin: 10px auto 10px auto;
+    background: #2A2A2A;
+}
+.join-vip {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+}
+.lock-or-unlock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    background: #1C1C1C;
+}
+.lock-or-unlock i {
+    color: white;
+}
+.join-vip div p {
+    font-size: 10px;
+    margin: 0px;
+    font-weight: bold;
+}
+.each-vip .photo {
+    width: 100px;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100px;
+}
+.each-vip .photo img {
+    width: 100%;
+}
+
+.vip-box h3 {
+    margin: 70px 10px 5px 10px;
+}
+.each-vip .detail {
+    width: 70%;
+}
+.each-vip .detail .one:nth-child(1) {
+    margin-bottom: 10px;
+}
+.each-vip .detail .one .each {
+    width: 90px;
+    flex-direction: column;
+    background: #373737;
+    border-radius: 15px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    height: 55px;
+}
+.each-vip .detail .one .each p:nth-child(1) {
+    margin: 0px 0px 10px 0px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.each-vip .detail .one .each p:nth-child(2) {
+    margin: 0px;
+    font-size: 8px;
+    font-weight: bold;
+}
+.each-vip .title {
+    width: 100%;
+    top: 10px;
+    position: absolute;
+}
+
+.each-vip .title .data {
+    width: 45%;
+    height: 30px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    background: linear-gradient(to right, #00FCFF, #00ADFF, #006CFF);
+}
+.each-vip .title .data p {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.rule-box,
+.company-box,
+.language-box,
+.transaction-detail-box,
+.withdraw-method-box,
+.recharge-box,
+.withdraw-box {
+    background: #171717;
+    z-index: 5;
+    width: 400px;
+    bottom: 0px;
+    position: fixed;
+    top: 10px;
+    display: none;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+
+.rule-box {
+    border-radius: 5px;
+}
+.company-box {
+    border-radius: 5px;
+}
+
+.withdraw-box {
+    border-radius: 5px;
+}
+.recharge-box {
+    border-radius: 5px;
+}
+
+.loading {
+    z-index: 9;
+    width: 100%;
+    bottom: 00px;
+    position: fixed;
+    top: 0px;
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    display: none;
+}
+.loading div {
+    width: 80px;
+    height: 80px;
+    background: rgba(0,0,0,0.3);
+    backdrop-filter: blur(7px);
+    border-radius: 20px;
+}
+.loading div svg {
+    animation: rotatesvg 2s infinite linear;
+    width: 40px;
+    height: 40px;
+}
+@keyframes rotatesvg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.loading div svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke: white;
+    stroke-dasharray: 30;
+    stroke-dashoffset: 40;
+    transform: translate(10px, 10px);
+    animation: animatesvg 1s linear infinite;
+}
+@keyframes animatesvg {
+    0%, 100% {
+        stroke-dashoffset: 60;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    50.1% {
+        stroke-dashoffset: 200;
+    }
+}
+
+.main-withdraw,
+.main-recharge,
+.main-rule,
+.main-company,
+.main-withdraw-method,
+.main-transaction-detail,
+.main-language {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.main-withdraw .advice {
+    margin: 80px 10px 5px 15px;
+}
+.main-withdraw .des-advice {
+    margin: 5px 10px 5px 15px;
+    font-size: 10px;
+}
+.main-withdraw .box-fields {
+    background: #242424;
+    margin: 20px auto 20px auto;
+    width: 90%;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    padding: 20px 0px 20px 0px;
+}
+.main-withdraw .box-fields h3 {
+    margin: 5px 10px 5px 10px;
+    font-size: 17px;
+}
+.main-withdraw .box-fields .value {
+    margin: 5px 10px 25px 10px;
+    font-size: 30px;
+}
+.body-with,
+.body-recharge,
+.body-rule,
+.body-company,
+.body-withdraw-method,
+.body-transaction-detail,
+.body-language {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.main-withdraw .box-fields form {
+    width: 100%;
+    margin: 10px auto 10px auto;
+}
+
+.box-fields form .email {
+    width: 90%;
+    height: 50px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    margin: 5px auto 10px auto;
+    background: #2C2C2C;
+}
+
+.box-fields form .email input {
+    width: 73%;
+}
+.box-fields form .email .icon {
+    width: 17%;
+}
+.box-fields form .email .icon i {
+    color: white;
+}
+.box-fields form .password {
+    width: 90%;
+    height: 50px;
+    border-radius: 30px;
+    margin: 20px auto 10px auto;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    background: #2C2C2C;
+}
+.box-fields form .password input,
+.box-fields form .password .text {
+    width: 70%;
+}
+.box-fields form .password .text p:nth-child(1) {
+    margin: 0px;
+    font-size: 13px;
+}
+.box-fields form .password .text p:nth-child(2) {
+    margin: 3px 0px 0px 0px;
+    font-size: 9px;
+    color: #898989;
+}
+
+.box-fields form .password .icon {
+    width: 17%;
+}
+.box-fields form .password .show-password {
+    width: 13%;
+}
+
+
+.btn-submit-with {
+    width: 80%;
+    height: 40px;
+    border-radius: 30px;
+    margin: 25px auto 0px auto;
+    background: linear-gradient(to right, #56B4FF, #2757FF, #0040FF);
+}
+.btn-submit-with button {
+    margin: 0px;
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+}
+.bref {
+    margin: 20px 10px 10px 15px;
+    font-size: 20px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+}
+.body-with .all {
+    width: 90%;
+    margin: 5px auto 5px auto;
+}
+.body-with .all ol li {
+    margin: 5px;
+    font-size: 12px;
+}
+.body-recharge h2 {
+    text-align: center;
+    font-size: 15px;
+    margin: 80px 10px 20px 10px;
+}
+.body-recharge .qr-code {
+    width: 200px;
+    height: 200px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    margin: 0px auto 10px auto;
+}
+.body-recharge .qr-code img {
+    width: 90%;
+}
+.body-recharge .link {
+    width: 90%;
+    margin: 20px auto 10px auto;
+    background: #2C2C2C;
+    height: 50px;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+}
+.body-recharge .link input {
+    width: 75%;
+    color: #0081FF;
+    font-size: 13px;
+    font-weight: bold;
+}
+.body-recharge .link .copy-link {
+    width: 10%;
+}
+.body-recharge .link .copy-link i {
+    color: white;
+}
+.body-recharge .little-text {
+    font-size: 13px;
+    padding: 5px 0px 5px 5px;
+    border-left: 2px solid white;
+    margin: 20px 10px 10px 20px;
+}
+.body-recharge .btn-submit-recharge {
+    width: 80%;
+    height: 45px;
+    border-radius: 30px;
+    margin: 25px auto 30px auto;
+    background: linear-gradient(to right, #56B4FF, #2757FF, #0040FF);
+}
+.body-recharge .btn-submit-recharge p {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+.task-box .task-detail {
+    margin: 80px auto 20px auto;
+    width: 95%;
+}
+.task-box .task-detail .detail div {
+    width: 90px;
+    flex-direction: column;
+    height: 60px;
+}
+.task-box .task-detail .detail div:nth-child(2) {
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+.task-box .task-detail .detail div p:nth-child(1) {
+    font-size: 18px;
+    margin: 0px;
+}
+.task-box .task-detail .detail div p:nth-child(2) {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
+}
+.task-box .task-detail .detail {
+    width: 65%;
+    background: 282828;
+    height: 90px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+.task-box .task-detail .total-earn-today {
+    width: 30%;
+    height: 90px;
+    flex-direction: column;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background: #282828;
+}
+.task-box .task-detail .total-earn-today p:nth-child(1) {
+    font-size: 18px;
+    margin: 0px;
+    color: #0082FF;
+}
+.task-box .task-detail .total-earn-today p:nth-child(2) {
+    font-size: 10px;
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
+}
+.task-box h3 {
+    margin: 15px 10px 10px 20px;
+}
+.tasks {
+    width: 100%;
+    margin: 10px auto 10px auto;
+}
+
+.tasks .each-task {
+    border-radius: 20px;
+    padding: 0px 0px 10px 0px;
+    background: #272727;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);;
+    display: inline-block;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.tasks .each-task .image {
+    margin: 0px 0px 10px 0px;
+    overflow: hidden;
+}
+.tasks .each-task .image img {
+    width: 100%;
+}
+.tasks .each-task .data .name {
+    font-size: 11px;
+    font-weight: bold;
+    margin: 10px 10px 5px 10px;
+}
+.tasks .each-task .data .vip {
+    font-size: 10px;
+    color: #999999;
+    margin: 0px 10px 5px 10px;
+}
+.tasks .each-task .data .btn-do-task {
+    width: 80%;
+    height: 33px;
+    border-radius: 20px;
+    margin: 5px auto 5px auto;
+    background: linear-gradient(to right, #56B4FF, #2757FF);
+}
+.tasks .each-task .data .btn-do-task p {
+    font-size: 10px;
+    color: white;
+    font-weight: bold;
+}
+.tasks .each-task .data .amount {
+    width: 90%;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: 10px auto 10px auto;
+}
+.tasks .each-task .data .amount div {
+    width: 50%;
+}
+.tasks .each-task .data .amount div:nth-child(1) p {
+    font-size: 12px;
+    font-weight: bold;
+    color: #00FFA0;
+}
+.tasks .each-task .data .amount div:nth-child(2) p {
+    font-size: 12px;
+    text-align: right;
+    font-weight: bold;
+    color: #007DFF;
+}
+.body-rule h1,
+.body-company h1 {
+    margin: 80px 10px 15px 10px;
+    text-align: center;
+    font-size: 25px;
+}
+.body-rule h1 strong,
+.body-company h1 strong {
+    color: #1B83FF;
+}
+.body-rule .sinc,
+.body-rule .sign,
+.body-company .sinc,
+.body-company .sign {
+    margin: 10px 20px 15px 20px;
+    font-size: 14px;
+}
+.body-rule .reg,
+.body-company .reg {
+    margin: 10px 20px 15px 20px;
+    font-size: 14px;
+}
+
+.body-rule .reg a,
+.body-company .reg a{
+    font-weight: bold;
+    color: #0085FF;
+}
+.body-rule .mall,
+.body-company .mall {
+    margin: 10px 20px 15px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.body-rule ol li {
+    margin: 10px 20px 10px 20px;
+    font-size: 13px;
+}
+span.sep-line {
+    height: 3px;
+    width: 50%;
+    border-radius: 10px;
+    background: black;
+    margin: 10px 0px 10px 20px;
+    display: block;
+}
+
+.body-rule .list-vip,
+.body-company .list-vip {
+    margin: 10px 20px 15px 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.message {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    bottom: 80px;
+}
+.message p {
+    padding: 12px 25px 12px 25px;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    margin: 0px auto 0px auto;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(7px);
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.4);
+}
+
+.body-language .each-lang {
+    width: 90%;
+    margin: 15px auto 15px auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+
+.body-language .each-lang .text {
+    width: 90%;
+}
+.body-language .each-lang .rond {
+    width: 14px;
+    border-radius: 30px;
+    height: 14px;
+    border: 3px solid white;
+}
+.body-language .each-lang .text p:nth-child(1) {
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.body-language .each-lang .text p:nth-child(2) {
+    margin: 3px 0px 0px 0px;
+    font-size: 9px;
+}
+.body-language .each-lang .rond span {
+    width: 9px;
+    height: 9px;
+    border-radius: 10px;
+    background: white;
+}
+.body-language .valid-change {
+    width: 80%;
+    margin: 50px auto 0px auto;
+    border-radius: 30px;
+    height: 45px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.3);
+    background: #0E0E0E;
+}
+.body-language .valid-change button {
+    font-size: 13px;
+    color: white;
+    font-weight: 800;
+}
+.body-language .each-lang .rond span.active {
+    display: block;
+}
+.body-language .each-lang .rond span.disabled {
+    display: none;
+}
+
+@media all and (max-width: 780px) {
+    .main-street {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        top: 0px;
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: none;
+    }
+    .rule-box,
+    .company-box,
+    .language-box,
+    .transaction-detail-box,
+    .withdraw-method-box,
+    .recharge-box,
+    .withdraw-box {
+        width: 100%;
+        bottom: 0px;
+        position: fixed;
+        background: #171717;
+        top: 0px;
+        display: none;
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: none;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .main-street {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        top: 0px;
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: none;
+    }
+    .rule-box,
+    .company-box,
+    .language-box,
+    .transaction-detail-box,
+    .withdraw-method-box,
+    .recharge-box,
+    .withdraw-box {
+        width: 100%;
+        bottom: 0px;
+        position: fixed;
+        background: #171717;
+        top: 0px;
+        display: none;
+        border-radius: 0px;
+        overflow: hidden;
+        box-shadow: none;
+    }
+    .nav {
+        width: 100%;
+        height: 35px;
+        position: absolute;
+        bottom: 0px;
+        z-index: 3;
+        background: linear-gradient(to right, #00FFE7, #00FCFF, #00ADFF, #006CFF);
+    }
+    .nav .each p {
+        font-weight: 800;
+        font-size: 8px;
+        color: #171717;
+        margin: 6px 0px 0px 0px;
+    }
+    .my-bal .bal-one .each {
+        width: 90px;
+        flex-direction: column;
+        height: 90px;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+        border-radius: 20px;
+        background: #3B3B3B;
+    }
+    .my-bal .bal-one p:nth-child(1) {
+        font-size: 15px;
+        font-weight: bold;
+    }
+    
+    .my-bal .bal-one p:nth-child(2) {
+        font-size: 8px;
+        font-weight: bold;
+    }
+    .last-op {
+        width: 80%;
+        margin: 10px auto 10px auto;
+        background: #383838;
+        height: 40px;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+        border-radius: 30px;
+    }
+    .last-op a {
+        color: white;
+        font-size: 10px;
+        font-weight: 800;
+    }
+    .header, .header-with {
+        width: 80%;
+        height: 40px;
+        position: absolute;
+        top: 10px;
+        left: 10%;
+        z-index: 3;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+        background: linear-gradient(to right, #00FCFF, #00ADFF, #006CFF);
+        border-radius: 30px;
+    }
+    .slide-pic {
+        margin: 70px auto 20px auto;
+        width: 300px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    }
+    .slide-pic .img {
+        width: 300px;
+    }
+    .slide-pic .img img {
+        width: 300px;
+    }
+    .ref {
+        width: 85%;
+        padding: 10px 0px 10px 0px;
+        margin: 70px auto 20px auto;
+        background: #353535;
+        box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+        border-radius: 10px;
+    }
+    .ref h4 {
+        margin: 10px 0px 5px 10px;
+        font-weight: 800;
+        font-size: 13px;
+    }
+    .ref .copy-ref {
+        width: 90%;
+    }
+    .ref .copy-ref .data {
+        width: 90%;
+    }
+    .ref .copy-ref .copy-it {
+        width: 10%;
+    }
+    .ref .copy-ref .copy-it i {
+        color: #00FFD0;
+    }
+    .ref .copy-ref .data p {
+        font-size: 18px;
+        font-weight: 800;
+        margin-left: 10px;
+    }
+    .ref .copy-ref .data a {
+        font-size: 8px;
+        font-weight: 800;
+        margin-left: 10px;
+        color: #0078FF;
+    }
+    .me-box .profile {
+        margin: 60px auto 10px auto;
+        width: 90%;
+        border-bottom: 1px solid black;
+        padding-bottom: 5px;
+    }
+    .me-box .profile .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: #404040;
+    }
+    .me-box .profile .icon i {
+        font-size: 20px;
+        color: white;
+    }
+    .me-box .profile .data {
+        width: 70%;
+    }
+    .me-box .profile .data .email {
+        font-weight: bold;
+        color: #00FFA4;
+        font-size: 13px;
+        margin: 0px 0px 3px 0px;
+    }
+    .me-box .profile .data .vip-level {
+        font-weight: bold;
+        font-size: 8px;
+        margin: 0px 0px 3px 0px;
+    }
+    .me-box .profile .data .invite-code {
+        font-weight: bold;
+        margin: 0px 0px 3px 0px;
+        font-size: 8px;
+    }
+    .my-bal .bal-one p:nth-child(1) {
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .my-bal .bal-one p:nth-child(2) {
+        font-size: 8px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+}
+
+form.withdraw-form .error-with {
+    color: red;
+    margin: 0px 0px 0px 20px;
+    display: none;
+    font-weight: 800;
+    font-size: 11px;
+}
+form.withdraw-form div i {
+    color: white;
+}
+form.withdraw-form .password {
+    position: relative;
+}
+
+form.withdraw-form .password .choose-set-method {
+    position: absolute;
+    width: 85%;
+    left: 7.5%;
+    background: #282828;
+    display: none;
+    border-radius: 20px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.4);
+    z-index: 2;
+    bottom: 70px;
+    padding: 15px 0px 10px 0px;
+}
+
+form.withdraw-form .password .choose-set-method::before{
+    content: "";
+    width: 14px;
+    height: 14px;
+    background: #282828;
+    position: absolute;
+    bottom: -7px;
+    left: 48%;
+    transform: rotate(45deg);
+}
+
+
+form.withdraw-form .password .choose-set-method .each {
+    margin: 0px auto 15px auto;
+    width: 90%;
+    padding: 0px 0px 5px 0px;
+    border-bottom: 1.5px solid white;
+}
+
+form.withdraw-form .password .choose-set-method .each p:nth-child(1) {
+    margin: 0px 0px 5px 0px;
+    font-size: 13px;
+    color: white;
+    font-weight: 800;
+}
+
+form.withdraw-form .password .choose-set-method .each p:nth-child(2) {
+    margin: 0px 0px 5px 0px;
+    font-size: 11px;
+    color: #D2DFDC;
+}
+
+form.withdraw-form .password .choose-set-method .empty-data {
+    margin: 10px 0px 10px 0px;
+    font-size: 10px;
+    font-style: italic;
+    text-align: center;
+    color: #E4E9E8;
+}
+

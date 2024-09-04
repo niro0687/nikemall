@@ -1,0 +1,16 @@
+<p class="number-user">{% if all_user.count == 0 %}Ouups, 0 user 'til now{% elif all_user.count == 1 %}1 user founded{% else %}{{ all_user.count }} users found{% endif %}</p>
+{% if all_user.count > 0 %}
+{% for u in all_user %}
+<div class="each-user flex j-space a-center">
+    <div class="icon flex j-center a-center">
+        <i class="far fa-user"></i>
+    </div>
+    <div class="detail">
+        <p>{{ u.user.email }}</p>
+        <p>Balance: ${{ u.balance }}</p>
+        <p>Telegram: @{{ u.telegram }}</p>
+        <p>Date joined: {{ u.datetime_joined }}</p>
+    </div>
+</div>
+{% endfor %}
+{% endif %}

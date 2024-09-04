@@ -1,0 +1,546 @@
+body .main-street {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.success-alert {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 99;
+    display: none;
+    height: 100%;
+    bottom: 0px;
+    background: rgba(0,0,0,0.5);
+}
+.success-alert .main-success {
+    width: 320px;
+    border-radius: 30px;
+    padding: 0px;
+    overflow: hidden;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    background: #323232;
+}
+
+.success-alert .main-success .head {
+    height: 35px;
+    width: 100%;
+    border-bottom: 1px solid white;
+}
+.success-alert .main-success .head p {
+    font-size: 12px;
+    font-weight: 800;
+}
+.success-alert .main-success .texts p {
+    text-align: center;
+}
+.success-alert .main-success .texts p:nth-child(1) {
+    margin: 20px 30px 30px 30px;
+    font-size: 12px;
+}
+.success-alert .main-success .texts p:nth-child(1) strong {
+    color: #00EFFF;
+}
+
+
+.success-alert .main-success .texts p:nth-child(2) {
+    margin: 20px 30px 30px 30px;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.success-alert .main-success .texts p:nth-child(3) {
+    margin: 0px 20px 30px 20px;
+    color: #DCDCDC;
+    font-size: 14px;
+}
+
+.success-alert .main-success .texts p:nth-child(4) {
+    margin: 0px 30px 30px 30px;
+    font-size: 12px;
+    color: #8C8C8C;
+}
+
+
+.success-alert .main-success .ok p {
+    font-weight: 800;
+    color: #00ACFF;
+    font-size: 13px;
+}
+.success-alert .main-success .ok {
+    height: 50px;
+    background: #454545;
+    width: 100%;
+    border-top: 1px solid white;
+}
+
+i {
+    color: white;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+    background: #171717;
+}
+.n-btn {
+    cursor: pointer;
+}
+.block1 {
+    width: 350px;
+    height: 500px;
+    background: linear-gradient(35deg, #00FFE7, #00FCFF, #00ADFF, #006CFF);
+    position: relative;
+    flex-direction: column;
+    border-radius: 35px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+.block1 .logo {
+    width: 140px;
+    height: 90px;
+}
+.block1 .logo img {
+    width: 60%;
+    border-radius: 50px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+
+.block1 .lang {
+    top: 15px;
+    right: 15px;
+    border-radius: 30px;
+    background: #00ADFF;
+}
+.error {
+    color: red;
+    font-size: 11px;
+    display: none;
+    margin: 0px 10px 0px 25px;
+}
+
+.block1 .little-logo {
+    top: 15px;
+    left: 15px;
+    width: 40px;
+    height: 40px;
+}
+.little-logo i {
+    color: white;
+    font-size: 25px;
+}
+.block1 .lang p {
+    margin: 9px 20px 7px 20px;
+    font-size: 12px;
+    color: white;
+    font-weight: 800;
+}
+
+.fields {
+    width: 400px;
+    position: relative;
+    transform: translateY(0px);
+}
+.fields .login, .fields .register {
+    width: 85%;
+    background: #282828;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 20px;
+    margin: 0px auto 0px auto;
+    padding: 20px 0px 20px 0px;
+}
+.foot {
+    background: #1E1E1E;
+    bottom: 0px;
+    display: none;
+    margin: 75px 0px 0px 0px;
+    padding: 0px 10px 5px 10px;
+}
+.foot .host {
+    text-align: center;
+    color: #5D5D5D;
+    font-size: 11px;
+}
+.foot .planing {
+    text-align: center;
+    color: #666666;
+    margin: 10px 20px 5px 20px;
+    font-size: 12px;
+    font-weight: 800;
+}
+.foot .social {
+    margin: 0px auto 30px auto;
+    width: 95%;
+}
+.foot .contact-us,
+.foot .join-us {
+    font-size: 15px;
+    font-weight: 800;
+    margin: 25px 0px 5px 0px;
+    color: #555555;
+    text-align: center;
+}
+.foot .social .each-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+}
+.foot .social i {
+    color: #636363;
+    font-size: 25px;
+}
+.foot .dev {
+    font-size: 10px;
+    color: #3A3A3A;
+    text-align: center;
+    margin: 5px 20px 20px 20px;
+}
+.foot .host a {
+    color: #8C8C8C;
+}
+.foot .ver {
+    text-align: center;
+    color: #404040;
+    margin: 20px 0px 2px 0px;
+    font-size: 10px;
+}
+.foot .trad {
+    margin: 10px 20px 20px 20px;
+    font-size: 12px;
+    text-align: center;
+    color: #575757;
+}
+.fields .register {
+    display: none;
+}
+.login-form .email, 
+.register-form .email, 
+.register-form .telegram, 
+.register-form .whatsapp {
+    width: 90%;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    border-radius: 30px;
+    margin: 15px auto 10px auto;
+    background: #292929;
+}
+.login-form .email {
+    height: 50px;
+}
+.register-form .email, 
+.register-form .telegram, 
+.register-form .whatsapp {
+    height: 40px;
+}
+.register-form .telegram {
+    margin-top: 20px;
+}
+.login-form .email .icon, 
+.login-form .password .icon, 
+.register-form .email .icon, 
+.register-form .create-password .icon, 
+.register-form .telegram .icon, 
+.register-form .whatsapp .icon, 
+.register-form .invitation-code .icon, 
+.register-form .transaction-password .icon, 
+.register-form .confirm-password .icon {
+    width: 17%;
+}
+.login-form .email .icon i, 
+.login-form .password .icon i, 
+.register-form .email .icon i, 
+.register-form .create-password .icon i, 
+.register-form .telegram .icon i, 
+.register-form .whatsapp .icon i, 
+.register-form .invitation-code .icon i, 
+.register-form .transaction-password .icon i, 
+.register-form .confirm-password .icon i {
+    color: white;
+}
+.login-form .email input, .register-form .email input, .register-form .telegram input, .register-form .whatsapp input, .register-form .invitation-code input {
+    width: 87%;
+}
+.login-form .password, .register-form .create-password, .register-form .confirm-password, .register-form .transaction-password, .register-form .invitation-code {
+    width: 90%;
+    border-radius: 30px;
+    margin: 20px auto 10px auto;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    background: #292929;
+}
+.login-form .password {
+    height: 50px;
+}
+.register-form .create-password, .register-form .confirm-password, .register-form .transaction-password, .register-form .invitation-code {
+    height: 40px;
+}
+.login-form .password input, .register-form .create-password input, .register-form .confirm-password input, .register-form .transaction-password input {
+    width: 70%;
+}
+
+.login-form .password .show-password, .register-form .create-password .show-password {
+    width: 13%;
+}
+
+.login-form .password .show-password i, .register-form .create-password .show-password i {
+    color: white;
+}
+
+
+.btn-login, .btn-register {
+    width: 70%;
+    height: 40px;
+    border-radius: 30px;
+    border: 2px #56B4FF solid;
+    margin: 20px auto 0px auto;
+    background: linear-gradient(to right, #56B4FF, #2757FF, #0040FF);
+}
+.btn-login button, .btn-register button {
+    margin: 0px;
+    font-weight: 800;
+    color: white;
+    font-size: 12px;
+}
+
+.sep {
+    width: 10%;
+    border-radius: 10px;
+    height: 3px;
+    display: block;
+    margin: 20px auto 20px auto;
+    background: black;
+}
+.no-account, .have-account {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 800;
+    color: #008EFF;
+}
+.login h2, .register h2 {
+    font-size: 30px;
+    text-align: center;
+}
+.message {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    background: linear-gradient(#00FAFF, #008EFF);
+    bottom: 50px;
+    border-radius: 100%;
+    z-index: 3;
+    right: 20px;
+}
+.message i {
+    font-size: 20px;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 25px 10px 25px 10px;
+    background: #F1F1F1;
+}
+
+
+.btn-register svg {
+    animation: rotatesvg 2s infinite linear;
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+@keyframes rotatesvg {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.btn-register svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke: white;
+    stroke-dasharray: 20;
+    stroke-dashoffset: 40;
+    transform: translate(5px, 5px);
+    animation: animatesvg 2s linear infinite;
+}
+@keyframes animatesvg {
+    0%, 100% {
+        stroke-dashoffset: 60;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    50.1% {
+        stroke-dashoffset: 200;
+    }
+}
+.black {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    height: 100%;
+    bottom: 0px;
+    display: none;
+    background: rgba(0,0,0,0.4);
+    z-index: 10;
+}
+.block1 .footer {
+    position: absolute;
+    bottom: 15px;
+    width: 90%;
+    left: 5%;
+}
+.block1 .footer div {
+    width: 30px;
+}
+.block1 .footer div i {
+    color: white;
+    font-size: 25px;
+}
+.choose-lang {
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    z-index: 20;
+    display: none;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.choose-lang .bl {
+    width: 500px;
+    background: #333333;
+    position: relative;
+    padding-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.5);
+}
+.choose-lang .bl .each-lang {
+    width: 90%;
+    margin: 15px auto 15px auto;
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+}
+.choose-lang .bl .tt {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+ .choose-lang .bl .each-lang .text {
+    width: 90%;
+}
+.choose-lang .bl .each-lang .rond {
+    width: 14px;
+    border-radius: 30px;
+    height: 14px;
+    border: 3px solid white;
+}
+.choose-lang .bl .each-lang .text p:nth-child(1) {
+    margin: 0px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.choose-lang .bl .each-lang .text p:nth-child(2) {
+    margin: 3px 0px 0px 0px;
+    font-size: 9px;
+}
+.choose-lang .bl .each-lang .rond span {
+    width: 9px;
+    height: 9px;
+    border-radius: 10px;
+    background: white;
+}
+.choose-lang .bl .valid-change {
+    width: 80%;
+    margin: 10px auto 0px auto;
+    border-radius: 30px;
+    height: 45px;
+    background: #0E0E0E;
+}
+.choose-lang .bl .valid-change button {
+    font-size: 13px;
+    color: white;
+    font-weight: 800;
+}
+.choose-lang .bl .close-lang {
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    border-radius: 30px;
+    background: #464646;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.3);
+}
+.choose-lang .bl .each-lang .rond span.active {
+    display: block;
+}
+.choose-lang .bl .each-lang .rond span.disabled {
+    display: none;
+}
+@media all and (max-width: 780px) {
+    body {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        background: #171717;
+    }
+    body .main-street {
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        width: 100%;
+        display: block;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .block1 {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(35deg, #00FFE7, #00FCFF, #00ADFF, #006CFF);
+        position: relative;
+        flex-direction: column;
+        border-radius: 0px 0px 25px 25px;
+        z-index: 1;
+    }
+    .fields {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        transform: translateY(-20px);
+    }
+    .login-form .password {
+        height: 50px;
+    }
+    .register-form .email, 
+    .register-form .telegram, 
+    .register-form .whatsapp {
+        height: 50px;
+    }
+    .register-form .create-password, .register-form .confirm-password, .register-form .transaction-password, .register-form .invitation-code {
+        height: 50px;
+    }
+    .choose-lang .bl {
+        width: 70%;
+    }
+    .block1 .footer {
+        position: absolute;
+        bottom: 40px;
+        width: 90%;
+        left: 5%;
+    }
+    .foot {
+        background: #1E1E1E;
+        bottom: 0px;
+        display: block;
+        margin: 75px 0px 0px 0px;
+        padding: 5px 10px 5px 10px;
+    }
+}

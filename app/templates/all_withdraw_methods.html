@@ -1,0 +1,11 @@
+
+{% if my_withdraw_methods.count == 0 %}
+<p class="empty-data">No withdraw method set.<br>Please, set withdraw method to get your payment.</p>
+{% else %}
+{% for w in my_withdraw_methods %}
+<div class="each" id="{{ w.custom_id }}">
+    <p>{{ w.network }}</p>
+    <p>{{ w.adress }}</p>
+</div>
+{% endfor %}
+{% endif %}
